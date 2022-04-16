@@ -47,6 +47,7 @@ namespace PizzaStoreManagement.Forms
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            Home.Instance.OpenChildForm(new ManageEmployee());
         }
 
         private void btnStore_Click(object sender, EventArgs e)

@@ -105,5 +105,12 @@ namespace PizzaStoreManagement.Forms
             childForm.Show();
             lbHeader.Text = childForm.Text;
         }
+
+        public void OpenDialog(Form dialog)
+        {
+            dialog.StartPosition = FormStartPosition.CenterScreen;
+            dialog.FormBorderStyle = FormBorderStyle.None;
+            dialog.ShowDialog();
+        }
     }
 }

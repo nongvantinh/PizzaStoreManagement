@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.pnSideMenu = new System.Windows.Forms.Panel();
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimize = new RJCodeAdvance.RJControls.RJButton();
+            this.btnMaximize = new RJCodeAdvance.RJControls.RJButton();
+            this.btnClose = new RJCodeAdvance.RJControls.RJButton();
             this.lbHeader = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new RJCodeAdvance.RJControls.RJButton();
-            this.btnMaximize = new RJCodeAdvance.RJControls.RJButton();
-            this.btnMinimize = new RJCodeAdvance.RJControls.RJButton();
             this.pnHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,77 @@
             this.pnHeader.Size = new System.Drawing.Size(995, 100);
             this.pnHeader.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.btnMaximize);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(823, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(172, 100);
+            this.panel1.TabIndex = 1;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMinimize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMinimize.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMinimize.BorderRadius = 0;
+            this.btnMinimize.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(7, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(50, 50);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.TextColor = System.Drawing.Color.White;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMaximize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMaximize.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMaximize.BorderRadius = 0;
+            this.btnMaximize.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(63, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(50, 50);
+            this.btnMaximize.TabIndex = 2;
+            this.btnMaximize.TextColor = System.Drawing.Color.White;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.BackgroundColor = System.Drawing.Color.Red;
+            this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.BorderSize = 0;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(119, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(50, 50);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // lbHeader
             // 
             this.lbHeader.AutoSize = true;
@@ -84,77 +155,6 @@
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(995, 573);
             this.pnMain.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnMaximize);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(823, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(172, 100);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnClose.BorderRadius = 0;
-            this.btnClose.BorderSize = 0;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(119, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(50, 50);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMaximize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMaximize.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMaximize.BorderRadius = 0;
-            this.btnMaximize.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(63, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(50, 50);
-            this.btnMaximize.TabIndex = 2;
-            this.btnMaximize.TextColor = System.Drawing.Color.White;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMinimize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMinimize.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMinimize.BorderRadius = 0;
-            this.btnMinimize.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(7, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(50, 50);
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.TextColor = System.Drawing.Color.White;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // Home
             // 
