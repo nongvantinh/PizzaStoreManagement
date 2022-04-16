@@ -33,11 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCloseDialog = new RJCodeAdvance.RJControls.RJButton();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.cpbRepresentationImage = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.tbFullName = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbDateOfBirth = new RJCodeAdvance.RJControls.RJTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbPhoneNumber = new RJCodeAdvance.RJControls.RJTextBox();
@@ -55,9 +54,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new RJCodeAdvance.RJControls.RJButton();
             this.btnConfirm = new RJCodeAdvance.RJControls.RJButton();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.pnHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbRepresentationImage)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,7 @@
             this.btnCloseDialog.TabIndex = 2;
             this.btnCloseDialog.TextColor = System.Drawing.Color.White;
             this.btnCloseDialog.UseVisualStyleBackColor = false;
+            this.btnCloseDialog.Click += new System.EventHandler(this.btnCloseDialog_Click);
             // 
             // lbHeader
             // 
@@ -113,21 +114,23 @@
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "Thông Tin Nhân Viên";
             this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbHeader_MouseDown);
             // 
-            // rjCircularPictureBox1
+            // cpbRepresentationImage
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(9, 62);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(215, 215);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 4;
-            this.rjCircularPictureBox1.TabStop = false;
+            this.cpbRepresentationImage.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.cpbRepresentationImage.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.cpbRepresentationImage.BorderColor2 = System.Drawing.Color.HotPink;
+            this.cpbRepresentationImage.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.cpbRepresentationImage.BorderSize = 2;
+            this.cpbRepresentationImage.GradientAngle = 50F;
+            this.cpbRepresentationImage.Location = new System.Drawing.Point(9, 62);
+            this.cpbRepresentationImage.Name = "cpbRepresentationImage";
+            this.cpbRepresentationImage.Size = new System.Drawing.Size(215, 215);
+            this.cpbRepresentationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpbRepresentationImage.TabIndex = 4;
+            this.cpbRepresentationImage.TabStop = false;
+            this.cpbRepresentationImage.Click += new System.EventHandler(this.cpbRepresentationImage_Click);
             // 
             // tbFullName
             // 
@@ -147,7 +150,7 @@
             this.tbFullName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbFullName.PlaceholderText = "";
             this.tbFullName.Size = new System.Drawing.Size(469, 40);
-            this.tbFullName.TabIndex = 5;
+            this.tbFullName.TabIndex = 2;
             this.tbFullName.Texts = "";
             this.tbFullName.UnderlinedStyle = false;
             // 
@@ -174,28 +177,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Chức Vụ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbDateOfBirth
-            // 
-            this.tbDateOfBirth.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDateOfBirth.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbDateOfBirth.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbDateOfBirth.BorderRadius = 0;
-            this.tbDateOfBirth.BorderSize = 2;
-            this.tbDateOfBirth.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.tbDateOfBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbDateOfBirth.Location = new System.Drawing.Point(159, 451);
-            this.tbDateOfBirth.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDateOfBirth.Multiline = false;
-            this.tbDateOfBirth.Name = "tbDateOfBirth";
-            this.tbDateOfBirth.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbDateOfBirth.PasswordChar = false;
-            this.tbDateOfBirth.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbDateOfBirth.PlaceholderText = "";
-            this.tbDateOfBirth.Size = new System.Drawing.Size(469, 40);
-            this.tbDateOfBirth.TabIndex = 5;
-            this.tbDateOfBirth.Texts = "";
-            this.tbDateOfBirth.UnderlinedStyle = false;
             // 
             // label3
             // 
@@ -239,7 +220,7 @@
             this.tbPhoneNumber.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPhoneNumber.PlaceholderText = "";
             this.tbPhoneNumber.Size = new System.Drawing.Size(469, 40);
-            this.tbPhoneNumber.TabIndex = 5;
+            this.tbPhoneNumber.TabIndex = 7;
             this.tbPhoneNumber.Texts = "";
             this.tbPhoneNumber.UnderlinedStyle = false;
             // 
@@ -285,7 +266,7 @@
             this.tbUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbUsername.PlaceholderText = "";
             this.tbUsername.Size = new System.Drawing.Size(287, 40);
-            this.tbUsername.TabIndex = 5;
+            this.tbUsername.TabIndex = 0;
             this.tbUsername.Texts = "";
             this.tbUsername.UnderlinedStyle = false;
             // 
@@ -315,11 +296,11 @@
             this.tbPassword.Multiline = false;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbPassword.PasswordChar = false;
+            this.tbPassword.PasswordChar = true;
             this.tbPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPassword.PlaceholderText = "";
             this.tbPassword.Size = new System.Drawing.Size(287, 40);
-            this.tbPassword.TabIndex = 5;
+            this.tbPassword.TabIndex = 1;
             this.tbPassword.Texts = "";
             this.tbPassword.UnderlinedStyle = false;
             // 
@@ -353,7 +334,7 @@
             this.tbPassport.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPassport.PlaceholderText = "";
             this.tbPassport.Size = new System.Drawing.Size(469, 40);
-            this.tbPassport.TabIndex = 5;
+            this.tbPassport.TabIndex = 4;
             this.tbPassport.Texts = "";
             this.tbPassport.UnderlinedStyle = false;
             // 
@@ -387,7 +368,7 @@
             this.tbAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbAddress.PlaceholderText = "";
             this.tbAddress.Size = new System.Drawing.Size(469, 40);
-            this.tbAddress.TabIndex = 5;
+            this.tbAddress.TabIndex = 8;
             this.tbAddress.Texts = "";
             this.tbAddress.UnderlinedStyle = false;
             // 
@@ -407,7 +388,7 @@
             this.cbSex.Name = "cbSex";
             this.cbSex.Padding = new System.Windows.Forms.Padding(2);
             this.cbSex.Size = new System.Drawing.Size(469, 40);
-            this.cbSex.TabIndex = 7;
+            this.cbSex.TabIndex = 6;
             this.cbSex.Texts = "";
             // 
             // cbRole
@@ -426,7 +407,7 @@
             this.cbRole.Name = "cbRole";
             this.cbRole.Padding = new System.Windows.Forms.Padding(2);
             this.cbRole.Size = new System.Drawing.Size(469, 40);
-            this.cbRole.TabIndex = 8;
+            this.cbRole.TabIndex = 3;
             this.cbRole.Texts = "";
             // 
             // panel2
@@ -453,10 +434,11 @@
             this.btnClose.Location = new System.Drawing.Point(0, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(125, 52);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Đóng";
             this.btnClose.TextColor = System.Drawing.Color.White;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnConfirm
             // 
@@ -472,10 +454,20 @@
             this.btnConfirm.Location = new System.Drawing.Point(516, 0);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(125, 52);
-            this.btnConfirm.TabIndex = 1;
+            this.btnConfirm.TabIndex = 10;
             this.btnConfirm.Text = "Xác Nhận";
             this.btnConfirm.TextColor = System.Drawing.Color.White;
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(160, 453);
+            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(469, 40);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(469, 40);
+            this.dateTimePicker2.TabIndex = 11;
             // 
             // EmployeeInfomation
             // 
@@ -483,6 +475,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(641, 715);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.cbSex);
@@ -497,12 +490,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbPhoneNumber);
-            this.Controls.Add(this.tbDateOfBirth);
             this.Controls.Add(this.tbPassport);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.tbFullName);
-            this.Controls.Add(this.rjCircularPictureBox1);
+            this.Controls.Add(this.cpbRepresentationImage);
             this.Controls.Add(this.pnHeader);
             this.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -511,7 +503,7 @@
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbRepresentationImage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -524,11 +516,10 @@
         private System.Windows.Forms.Panel panel1;
         private RJCodeAdvance.RJControls.RJButton btnCloseDialog;
         private System.Windows.Forms.Label lbHeader;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox cpbRepresentationImage;
         private RJCodeAdvance.RJControls.RJTextBox tbFullName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private RJCodeAdvance.RJControls.RJTextBox tbDateOfBirth;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private RJCodeAdvance.RJControls.RJTextBox tbPhoneNumber;
@@ -546,5 +537,6 @@
         private System.Windows.Forms.Panel panel2;
         private RJCodeAdvance.RJControls.RJButton btnConfirm;
         private RJCodeAdvance.RJControls.RJButton btnClose;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

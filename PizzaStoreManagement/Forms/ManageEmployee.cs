@@ -69,12 +69,27 @@ namespace PizzaStoreManagement.Forms
                 currentMouseOverColumn = dataGridView1.HitTest(e.X, e.Y).ColumnIndex;
 
                 ContextMenuStrip m = new ContextMenuStrip();
-                m.Items.Add("Chi tiết").Click += ShowDetails;
-                m.Items.Add("Cập Nhật").Click += ShowUpdate;
-                m.Items.Add("Xóa tài khoản").Click += DeleteAccount;
+
+                m.Items.Add("Thêm mới").Click += AddNewEmployee;
+                if (-1 != currentMouseOverRow || -1 != currentMouseOverColumn)
+                {
+                    m.Items.Add("Chi tiết").Click += ShowDetails;
+                    m.Items.Add("Cập Nhật").Click += ShowUpdate;
+                    m.Items.Add("Xóa tài khoản").Click += DeleteAccount;
+                }
 
                 m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
+                m.Closed += (object s, ToolStripDropDownClosedEventArgs closeEvent) =>
+                {
+                    currentMouseOverRow = currentMouseOverColumn = -1;
+                };
             }
+        }
+
+        private void AddNewEmployee(object sender, EventArgs e)
+        {
+            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Ultils.ViewState.Create, string.Empty, () => { }, () => { RefreshDataGridView(); });
+            Utils.ApplicationManager.ShowDialog(dialog);
         }
 
         private void ShowUpdate(object sender, EventArgs e)

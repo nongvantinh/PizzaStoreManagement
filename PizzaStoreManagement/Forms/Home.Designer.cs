@@ -75,11 +75,11 @@
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMinimize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.btnMinimize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
             this.btnMinimize.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMinimize.BorderRadius = 0;
-            this.btnMinimize.BorderSize = 0;
+            this.btnMinimize.BorderRadius = 12;
+            this.btnMinimize.BorderSize = 2;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
@@ -95,10 +95,10 @@
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.btnMaximize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnMaximize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.btnMaximize.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMaximize.BorderRadius = 0;
+            this.btnMaximize.BorderRadius = 12;
             this.btnMaximize.BorderSize = 0;
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -118,7 +118,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.BackgroundColor = System.Drawing.Color.Red;
             this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnClose.BorderRadius = 0;
+            this.btnClose.BorderRadius = 12;
             this.btnClose.BorderSize = 0;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
