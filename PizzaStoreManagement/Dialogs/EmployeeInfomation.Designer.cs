@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCloseDialog = new RJCodeAdvance.RJControls.RJButton();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.cpbRepresentationImage = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.cpbAvatar = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.tbFullName = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.pnHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cpbRepresentationImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbAvatar)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,21 +116,21 @@
             this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbHeader_MouseDown);
             // 
-            // cpbRepresentationImage
+            // cpbAvatar
             // 
-            this.cpbRepresentationImage.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.cpbRepresentationImage.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.cpbRepresentationImage.BorderColor2 = System.Drawing.Color.HotPink;
-            this.cpbRepresentationImage.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.cpbRepresentationImage.BorderSize = 2;
-            this.cpbRepresentationImage.GradientAngle = 50F;
-            this.cpbRepresentationImage.Location = new System.Drawing.Point(9, 62);
-            this.cpbRepresentationImage.Name = "cpbRepresentationImage";
-            this.cpbRepresentationImage.Size = new System.Drawing.Size(215, 215);
-            this.cpbRepresentationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cpbRepresentationImage.TabIndex = 4;
-            this.cpbRepresentationImage.TabStop = false;
-            this.cpbRepresentationImage.Click += new System.EventHandler(this.cpbRepresentationImage_Click);
+            this.cpbAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.cpbAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.cpbAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.cpbAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.cpbAvatar.BorderSize = 2;
+            this.cpbAvatar.GradientAngle = 50F;
+            this.cpbAvatar.Location = new System.Drawing.Point(9, 62);
+            this.cpbAvatar.Name = "cpbAvatar";
+            this.cpbAvatar.Size = new System.Drawing.Size(215, 215);
+            this.cpbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpbAvatar.TabIndex = 4;
+            this.cpbAvatar.TabStop = false;
+            this.cpbAvatar.Click += new System.EventHandler(this.cpbAvater_Click);
             // 
             // tbFullName
             // 
@@ -296,7 +296,7 @@
             this.tbPassword.Multiline = false;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbPassword.PasswordChar = true;
+            this.tbPassword.PasswordChar = false;
             this.tbPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPassword.PlaceholderText = "";
             this.tbPassword.Size = new System.Drawing.Size(287, 40);
@@ -494,7 +494,7 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.tbFullName);
-            this.Controls.Add(this.cpbRepresentationImage);
+            this.Controls.Add(this.cpbAvatar);
             this.Controls.Add(this.pnHeader);
             this.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -503,7 +503,7 @@
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cpbRepresentationImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbAvatar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -516,7 +516,7 @@
         private System.Windows.Forms.Panel panel1;
         private RJCodeAdvance.RJControls.RJButton btnCloseDialog;
         private System.Windows.Forms.Label lbHeader;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox cpbRepresentationImage;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox cpbAvatar;
         private RJCodeAdvance.RJControls.RJTextBox tbFullName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
