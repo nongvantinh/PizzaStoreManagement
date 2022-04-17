@@ -58,6 +58,18 @@
     <Compile Include="Dialogs\EmployeeInfomation.Designer.cs">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ItemWithDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ItemWithDescription.Designer.cs">
+      <DependentUpon>ItemWithDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     <Compile Include="Forms\ManagePromotion.Designer.cs">
       <DependentUpon>ManagePromotion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageRole.Designer.cs">
+      <DependentUpon>ManageRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +145,12 @@
     <EmbeddedResource Include="Dialogs\EmployeeInfomation.resx">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ItemWithDescription.resx">
+      <DependentUpon>ItemWithDescription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManagePromotion.resx">
       <DependentUpon>ManagePromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageRole.resx">
+      <DependentUpon>ManageRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageStore.resx">
       <DependentUpon>ManageStore.cs</DependentUpon>

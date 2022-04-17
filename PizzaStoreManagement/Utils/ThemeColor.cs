@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace PizzaStoreManagement.Ultils
+namespace PizzaStoreManagement.Utils
 {
     public class ThemeColor
     {

@@ -54,5 +54,11 @@ namespace PizzaStoreManagement.Forms
         {
             HideSubMenu();
         }
+
+        private void btnRole_Click(object sender, EventArgs e)
+        {
+            Home.Instance.OpenChildForm(new ManageRole());
+            HideSubMenu();
+        }
     }
 }

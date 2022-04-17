@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
-namespace PizzaStoreManagement.Ultils
+namespace PizzaStoreManagement.Utils
 {
     public class Database
     {

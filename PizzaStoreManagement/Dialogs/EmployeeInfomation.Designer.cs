@@ -54,7 +54,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new RJCodeAdvance.RJControls.RJButton();
             this.btnConfirm = new RJCodeAdvance.RJControls.RJButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.pnHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpbRepresentationImage)).BeginInit();
@@ -460,14 +460,14 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // dateTimePicker2
+            // dtpDateOfBirth
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(160, 453);
-            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(469, 40);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(469, 40);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(160, 453);
+            this.dtpDateOfBirth.MinimumSize = new System.Drawing.Size(469, 40);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(469, 40);
+            this.dtpDateOfBirth.TabIndex = 5;
             // 
             // EmployeeInfomation
             // 
@@ -475,7 +475,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(641, 715);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.cbSex);
@@ -537,6 +537,6 @@
         private System.Windows.Forms.Panel panel2;
         private RJCodeAdvance.RJControls.RJButton btnConfirm;
         private RJCodeAdvance.RJControls.RJButton btnClose;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
     }
 }

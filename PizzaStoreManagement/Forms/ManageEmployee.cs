@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Forms
@@ -43,7 +39,7 @@ namespace PizzaStoreManagement.Forms
         {
             dataGridView1.Rows.Clear();
             return;
-            Ultils.Database.ExecuteReader("SELECT account_id, account_full_name, account_role, account_dob, account_phone_number" +
+            Utils.Database.ExecuteReader("SELECT account_id, account_full_name, account_role, account_dob, account_phone_number" +
                 " FROM pizza_store.accounts;", new List<Tuple<SqlDbType, object>>(),
                 reader =>
                 {
@@ -68,16 +64,19 @@ namespace PizzaStoreManagement.Forms
                 currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
                 currentMouseOverColumn = dataGridView1.HitTest(e.X, e.Y).ColumnIndex;
 
+
                 ContextMenuStrip m = new ContextMenuStrip();
 
-                m.Items.Add("Thêm mới").Click += AddNewEmployee;
+                m.Items.Add("Thêm mới").Click += AddNew;
                 if (-1 != currentMouseOverRow || -1 != currentMouseOverColumn)
                 {
-                    m.Items.Add("Chi tiết").Click += ShowDetails;
-                    m.Items.Add("Cập Nhật").Click += ShowUpdate;
-                    m.Items.Add("Xóa tài khoản").Click += DeleteAccount;
+                    m.Items.Add("Chi tiết").Click += Details;
+                    m.Items.Add("Cập Nhật").Click += Update;
+                    m.Items.Add("Xóa tài khoản").Click += Delete;
                 }
 
+                m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
+                m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
                 m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
                 m.Closed += (object s, ToolStripDropDownClosedEventArgs closeEvent) =>
                 {
@@ -86,29 +85,29 @@ namespace PizzaStoreManagement.Forms
             }
         }
 
-        private void AddNewEmployee(object sender, EventArgs e)
+        private void AddNew(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Ultils.ViewState.Create, string.Empty, () => { }, () => { RefreshDataGridView(); });
+            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Utils.ViewState.Create, string.Empty, () => { }, () => { RefreshDataGridView(); });
             Utils.ApplicationManager.ShowDialog(dialog);
         }
 
-        private void ShowUpdate(object sender, EventArgs e)
+        private void Update(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Ultils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, () => { RefreshDataGridView(); });
+            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, () => { RefreshDataGridView(); });
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.ShowDialog();
         }
 
-        private void ShowDetails(object sender, EventArgs e)
+        private void Details(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Ultils.ViewState.Details, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value);
+            var dialog = new Dialogs.EmployeeInfomation("Thông Tin Nhân Viên", Utils.ViewState.Details, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value);
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.ShowDialog();
         }
 
-        private void DeleteAccount(object sender, EventArgs e)
+        private void Delete(object sender, EventArgs e)
         {
-            Ultils.Database.ExecuteNonQuery("DELETE FROM pizza_store.accounts WHERE account_id = @account_id;", new List<Tuple<SqlDbType, object>>()
+            Utils.Database.ExecuteNonQuery("DELETE FROM pizza_store.accounts WHERE account_id = @account_id;", new List<Tuple<SqlDbType, object>>()
             {
                 new Tuple<SqlDbType, object>(SqlDbType.Char, dataGridView1.Rows[currentMouseOverRow].Cells[0].Value)
             });
@@ -117,7 +116,7 @@ namespace PizzaStoreManagement.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.EmployeeInfomation("Thêm Nhân Viên", Ultils.ViewState.Create);
+            var dialog = new Dialogs.EmployeeInfomation("Thêm Nhân Viên", Utils.ViewState.Create);
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.ShowDialog();
         }

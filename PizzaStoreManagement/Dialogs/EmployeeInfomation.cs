@@ -20,7 +20,7 @@ namespace PizzaStoreManagement.Dialogs
         private Action _onBtnClosePressed;
         private Action _onBtnConfirmPressed;
         private string _employeeId;
-        private Ultils.ViewState _view;
+        private Utils.ViewState _view;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -28,20 +28,22 @@ namespace PizzaStoreManagement.Dialogs
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
 
-        public EmployeeInfomation(string header, Ultils.ViewState view)
+        public EmployeeInfomation(string header, Utils.ViewState view)
         {
             InitializeComponent();
             lbHeader.Text = header;
             _view = view;
+
+            cbSex.Items.AddRange(new List<string>() { "Nam", "Nữ" }.ToArray());
         }
 
-        public EmployeeInfomation(string header, Ultils.ViewState view, string employeeId)
+        public EmployeeInfomation(string header, Utils.ViewState view, string employeeId)
             : this(header, view)
         {
             _employeeId = employeeId;
         }
 
-        public EmployeeInfomation(string header, Ultils.ViewState view, string employeeId, Action onBtnClosePressed, Action onBtnConfirmPressed)
+        public EmployeeInfomation(string header, Utils.ViewState view, string employeeId, Action onBtnClosePressed, Action onBtnConfirmPressed)
         : this(header, view, employeeId)
         {
             _onBtnClosePressed = onBtnClosePressed;
