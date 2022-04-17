@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SideMenu));
-            this.pnSIdeMenu = new System.Windows.Forms.Panel();
-            this.pnSideMenuContents = new System.Windows.Forms.Panel();
-            this.pnSideMenuManage = new System.Windows.Forms.Panel();
-            this.btnStore = new System.Windows.Forms.Button();
-            this.btnRole = new System.Windows.Forms.Button();
-            this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
-            this.btnStatistics = new System.Windows.Forms.Button();
-            this.btnManage = new System.Windows.Forms.Button();
             this.pnSideMenuHeader = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
@@ -48,160 +39,25 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnSIdeMenu.SuspendLayout();
-            this.pnSideMenuContents.SuspendLayout();
-            this.pnSideMenuManage.SuspendLayout();
+            this.pnSideMenuContents = new System.Windows.Forms.Panel();
+            this.pnSideMenuManage = new System.Windows.Forms.Panel();
+            this.btnWarehouse = new System.Windows.Forms.Button();
+            this.btnRole = new System.Windows.Forms.Button();
+            this.btnEmployee = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
+            this.pnSIdeMenu = new System.Windows.Forms.Panel();
             this.pnSideMenuHeader.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnSideMenuContents.SuspendLayout();
+            this.pnSideMenuManage.SuspendLayout();
+            this.pnSIdeMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnSIdeMenu
-            // 
-            this.pnSIdeMenu.Controls.Add(this.pnSideMenuContents);
-            this.pnSIdeMenu.Controls.Add(this.pnSideMenuHeader);
-            this.pnSIdeMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSIdeMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnSIdeMenu.Name = "pnSIdeMenu";
-            this.pnSIdeMenu.Size = new System.Drawing.Size(249, 626);
-            this.pnSIdeMenu.TabIndex = 1;
-            // 
-            // pnSideMenuContents
-            // 
-            this.pnSideMenuContents.AutoScroll = true;
-            this.pnSideMenuContents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.pnSideMenuContents.Controls.Add(this.pnSideMenuManage);
-            this.pnSideMenuContents.Controls.Add(this.btnManage);
-            this.pnSideMenuContents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSideMenuContents.Location = new System.Drawing.Point(0, 330);
-            this.pnSideMenuContents.Name = "pnSideMenuContents";
-            this.pnSideMenuContents.Size = new System.Drawing.Size(249, 296);
-            this.pnSideMenuContents.TabIndex = 3;
-            // 
-            // pnSideMenuManage
-            // 
-            this.pnSideMenuManage.AutoSize = true;
-            this.pnSideMenuManage.Controls.Add(this.btnStore);
-            this.pnSideMenuManage.Controls.Add(this.btnRole);
-            this.pnSideMenuManage.Controls.Add(this.btnEmployee);
-            this.pnSideMenuManage.Controls.Add(this.btnProduct);
-            this.pnSideMenuManage.Controls.Add(this.btnStatistics);
-            this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
-            this.pnSideMenuManage.Name = "pnSideMenuManage";
-            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 285);
-            this.pnSideMenuManage.TabIndex = 3;
-            // 
-            // btnStore
-            // 
-            this.btnStore.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStore.FlatAppearance.BorderSize = 0;
-            this.btnStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStore.Image")));
-            this.btnStore.Location = new System.Drawing.Point(0, 228);
-            this.btnStore.Name = "btnStore";
-            this.btnStore.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnStore.Size = new System.Drawing.Size(228, 57);
-            this.btnStore.TabIndex = 9;
-            this.btnStore.Text = "     Cửa Hàng";
-            this.btnStore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStore.UseVisualStyleBackColor = true;
-            // 
-            // btnRole
-            // 
-            this.btnRole.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRole.FlatAppearance.BorderSize = 0;
-            this.btnRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnRole.Image = ((System.Drawing.Image)(resources.GetObject("btnRole.Image")));
-            this.btnRole.Location = new System.Drawing.Point(0, 171);
-            this.btnRole.Name = "btnRole";
-            this.btnRole.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnRole.Size = new System.Drawing.Size(228, 57);
-            this.btnRole.TabIndex = 8;
-            this.btnRole.Text = "     Chức Vụ";
-            this.btnRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRole.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRole.UseVisualStyleBackColor = true;
-            this.btnRole.Click += new System.EventHandler(this.btnRole_Click);
-            // 
-            // btnEmployee
-            // 
-            this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmployee.FlatAppearance.BorderSize = 0;
-            this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
-            this.btnEmployee.Location = new System.Drawing.Point(0, 114);
-            this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnEmployee.Size = new System.Drawing.Size(228, 57);
-            this.btnEmployee.TabIndex = 5;
-            this.btnEmployee.Text = "     Nhân Viên";
-            this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmployee.UseVisualStyleBackColor = true;
-            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
-            this.btnProduct.Location = new System.Drawing.Point(0, 57);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(228, 57);
-            this.btnProduct.TabIndex = 4;
-            this.btnProduct.Text = "     Sản Phẩm";
-            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProduct.UseVisualStyleBackColor = true;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            // 
-            // btnStatistics
-            // 
-            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistics.FlatAppearance.BorderSize = 0;
-            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnStatistics.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistics.Image")));
-            this.btnStatistics.Location = new System.Drawing.Point(0, 0);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnStatistics.Size = new System.Drawing.Size(228, 57);
-            this.btnStatistics.TabIndex = 3;
-            this.btnStatistics.Text = "     Thống Kê";
-            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStatistics.UseVisualStyleBackColor = true;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
-            // 
-            // btnManage
-            // 
-            this.btnManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnManage.Image = ((System.Drawing.Image)(resources.GetObject("btnManage.Image")));
-            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.Location = new System.Drawing.Point(0, 0);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnManage.Size = new System.Drawing.Size(228, 57);
-            this.btnManage.TabIndex = 2;
-            this.btnManage.Text = "     Quản lý";
-            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // pnSideMenuHeader
             // 
@@ -322,6 +178,151 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Chức Vụ:";
             // 
+            // pnSideMenuContents
+            // 
+            this.pnSideMenuContents.AutoScroll = true;
+            this.pnSideMenuContents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.pnSideMenuContents.Controls.Add(this.pnSideMenuManage);
+            this.pnSideMenuContents.Controls.Add(this.btnManage);
+            this.pnSideMenuContents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnSideMenuContents.Location = new System.Drawing.Point(0, 330);
+            this.pnSideMenuContents.Name = "pnSideMenuContents";
+            this.pnSideMenuContents.Size = new System.Drawing.Size(249, 296);
+            this.pnSideMenuContents.TabIndex = 3;
+            // 
+            // pnSideMenuManage
+            // 
+            this.pnSideMenuManage.AutoSize = true;
+            this.pnSideMenuManage.Controls.Add(this.btnWarehouse);
+            this.pnSideMenuManage.Controls.Add(this.btnRole);
+            this.pnSideMenuManage.Controls.Add(this.btnEmployee);
+            this.pnSideMenuManage.Controls.Add(this.btnProduct);
+            this.pnSideMenuManage.Controls.Add(this.btnStatistics);
+            this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
+            this.pnSideMenuManage.Name = "pnSideMenuManage";
+            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 285);
+            this.pnSideMenuManage.TabIndex = 3;
+            // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWarehouse.FlatAppearance.BorderSize = 0;
+            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWarehouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.Image")));
+            this.btnWarehouse.Location = new System.Drawing.Point(0, 228);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnWarehouse.Size = new System.Drawing.Size(228, 57);
+            this.btnWarehouse.TabIndex = 9;
+            this.btnWarehouse.Text = "     Kho Hàng";
+            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnWarehouse.UseVisualStyleBackColor = true;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            // 
+            // btnRole
+            // 
+            this.btnRole.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRole.FlatAppearance.BorderSize = 0;
+            this.btnRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnRole.Image = ((System.Drawing.Image)(resources.GetObject("btnRole.Image")));
+            this.btnRole.Location = new System.Drawing.Point(0, 171);
+            this.btnRole.Name = "btnRole";
+            this.btnRole.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnRole.Size = new System.Drawing.Size(228, 57);
+            this.btnRole.TabIndex = 8;
+            this.btnRole.Text = "     Chức Vụ";
+            this.btnRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRole.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRole.UseVisualStyleBackColor = true;
+            this.btnRole.Click += new System.EventHandler(this.btnRole_Click);
+            // 
+            // btnEmployee
+            // 
+            this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmployee.FlatAppearance.BorderSize = 0;
+            this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
+            this.btnEmployee.Location = new System.Drawing.Point(0, 114);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEmployee.Size = new System.Drawing.Size(228, 57);
+            this.btnEmployee.TabIndex = 5;
+            this.btnEmployee.Text = "     Nhân Viên";
+            this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
+            this.btnProduct.Location = new System.Drawing.Point(0, 57);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProduct.Size = new System.Drawing.Size(228, 57);
+            this.btnProduct.TabIndex = 4;
+            this.btnProduct.Text = "     Sản Phẩm";
+            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistics.FlatAppearance.BorderSize = 0;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnStatistics.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistics.Image")));
+            this.btnStatistics.Location = new System.Drawing.Point(0, 0);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnStatistics.Size = new System.Drawing.Size(228, 57);
+            this.btnStatistics.TabIndex = 3;
+            this.btnStatistics.Text = "     Thống Kê";
+            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnManage.Image = ((System.Drawing.Image)(resources.GetObject("btnManage.Image")));
+            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.Location = new System.Drawing.Point(0, 0);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnManage.Size = new System.Drawing.Size(228, 57);
+            this.btnManage.TabIndex = 2;
+            this.btnManage.Text = "     Quản lý";
+            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
+            // pnSIdeMenu
+            // 
+            this.pnSIdeMenu.Controls.Add(this.pnSideMenuContents);
+            this.pnSIdeMenu.Controls.Add(this.pnSideMenuHeader);
+            this.pnSIdeMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnSIdeMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnSIdeMenu.Name = "pnSIdeMenu";
+            this.pnSIdeMenu.Size = new System.Drawing.Size(249, 626);
+            this.pnSIdeMenu.TabIndex = 1;
+            // 
             // SideMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -333,10 +334,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SideMenu";
             this.Text = "SideMenu";
-            this.pnSIdeMenu.ResumeLayout(false);
-            this.pnSideMenuContents.ResumeLayout(false);
-            this.pnSideMenuContents.PerformLayout();
-            this.pnSideMenuManage.ResumeLayout(false);
             this.pnSideMenuHeader.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
@@ -345,19 +342,16 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnSideMenuContents.ResumeLayout(false);
+            this.pnSideMenuContents.PerformLayout();
+            this.pnSideMenuManage.ResumeLayout(false);
+            this.pnSIdeMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnSIdeMenu;
-        private System.Windows.Forms.Panel pnSideMenuContents;
-        private System.Windows.Forms.Panel pnSideMenuManage;
-        private System.Windows.Forms.Button btnEmployee;
-        private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Button btnStatistics;
-        private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Panel pnSideMenuHeader;
         private System.Windows.Forms.Panel panel4;
         private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
@@ -368,7 +362,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnSideMenuContents;
+        private System.Windows.Forms.Panel pnSideMenuManage;
+        private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.Button btnRole;
-        private System.Windows.Forms.Button btnStore;
+        private System.Windows.Forms.Button btnEmployee;
+        private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Panel pnSIdeMenu;
     }
 }

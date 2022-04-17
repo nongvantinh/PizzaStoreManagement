@@ -16,7 +16,6 @@ namespace PizzaStoreManagement.Forms
             InitializeComponent();
             InitGridView();
             RefreshDataGridView();
-
         }
 
         private void InitGridView()
