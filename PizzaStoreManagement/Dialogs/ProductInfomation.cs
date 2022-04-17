@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Dialogs
@@ -14,6 +16,7 @@ namespace PizzaStoreManagement.Dialogs
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        private OpenFileDialog _fileDialog = new OpenFileDialog();
         private Dictionary<string, Guid> _units = new Dictionary<string, Guid>();
         private Action _onBtnClosePressed;
         private Action _onBtnConfirmPressed;
@@ -40,8 +43,9 @@ namespace PizzaStoreManagement.Dialogs
                 case Utils.ViewState.Details:
                 case Utils.ViewState.Update:
                     {
-                        Utils.Database.ExecuteReader("SELECT product_avatar, product_name, product_kind, unit_name, product_price" +
-                            " FROM pizza_store.products LEFT JOIN pizza_store.unit ON pizza_store.unit.unit_id = product_unit_id WHERE product_id = @product_id;", new List<Tuple<SqlDbType, object>>()
+                        Utils.Database.ExecuteReader("SELECT product_avatar, product_name, product_kind," +
+                            " (SELECT unit_name FROM pizza_store.unit WHERE unit_id = product_unit_id) AS unit_name, product_price" +
+                            " FROM pizza_store.products WHERE product_id = @product_id;", new List<Tuple<SqlDbType, object>>()
                             {
                                 new Tuple<SqlDbType, object>(SqlDbType.NVarChar, _productId),
                             }, reader =>
@@ -52,7 +56,7 @@ namespace PizzaStoreManagement.Dialogs
                                     tbName.Texts = (string)reader["product_name"];
                                     cbKind.SelectedItem = (string)reader["product_kind"];
                                     cbUnit.SelectedItem = (string)reader["unit_name"];
-                                    tbPrice.Texts = (string)reader["product_price"];
+                                    tbPrice.Texts = reader["product_price"].ToString();
                                 }
                             });
                     }
@@ -102,7 +106,7 @@ namespace PizzaStoreManagement.Dialogs
                                      new Tuple<SqlDbType, object>(SqlDbType.Image, Utils.ApplicationManager.ImageToByteArray(pbAvatar.Image)),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, tbName.Texts),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, cbKind.SelectedItem),
-                                     new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem]),
+                                     new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Int, int.Parse(tbPrice.Texts)),
 
                                      new Tuple<SqlDbType, object>(SqlDbType.Char, _productId),
@@ -119,13 +123,13 @@ namespace PizzaStoreManagement.Dialogs
                     }
                     else
                     {
-                        Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.products(product_avatar, product_id, product_name, product_kind, " +
-                            "product_unit_id, product_price) VALUES(NEWID(), @product_name, @product_kind, @product_unit_id, @product_price);",
+                        Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.products(product_id, product_avatar, product_name, product_kind, " +
+                            "product_unit_id, product_price) VALUES(NEWID(), @product_avatar, @product_name, @product_kind, @product_unit_id, @product_price);",
                              new List<Tuple<SqlDbType, object>>() {
                                                                       new Tuple<SqlDbType, object>(SqlDbType.Image, Utils.ApplicationManager.ImageToByteArray(pbAvatar.Image)),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, tbName.Texts),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, cbKind.SelectedItem),
-                                     new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem]),
+                                     new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Int, int.Parse(tbPrice.Texts)),
                              });
                     }
@@ -134,6 +138,24 @@ namespace PizzaStoreManagement.Dialogs
 
             _onBtnConfirmPressed?.Invoke();
             Close();
+        }
+
+        private void pbAvatar_Click(object sender, EventArgs e)
+        {
+            _fileDialog.Filter = "jpg or png files(*.jpg, *.png)|*.jpg;*.png| png files (*.png)|*.png|jpg files (*.jpg)|*.jpg";
+            if (_fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var filePath = _fileDialog.FileName;
+                    pbAvatar.Image = Image.FromFile(filePath);
+                }
+                catch (SecurityException ex)
+                {
+                    MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
+                    $"Details:\n\n{ex.StackTrace}");
+                }
+            }
         }
     }
 }

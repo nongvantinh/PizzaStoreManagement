@@ -43,16 +43,19 @@ namespace PizzaStoreManagement.Forms
         private void RefreshDataGridView()
         {
             dataGridView1.Rows.Clear();
-            Utils.Database.ExecuteReader("SELECT role_id, role_name, role_description" +
-                " FROM pizza_store.roles;", new List<Tuple<SqlDbType, object>>(),
+            Utils.Database.ExecuteReader("SELECT product_id, product_name, product_kind, " +
+                " (SELECT unit_name FROM pizza_store.unit WHERE unit_id = product_unit_id) as unit_name, product_price" +
+                " FROM pizza_store.products;", new List<Tuple<SqlDbType, object>>(),
                 reader =>
                 {
                     for (int i = 0; reader.Read(); ++i)
                     {
                         List<object> objs = new List<object>();
-                        objs.Add(reader["role_id"]);
-                        objs.Add(reader["role_name"]);
-                        objs.Add(reader["role_description"]);
+                        objs.Add(reader["product_id"]);
+                        objs.Add(reader["product_name"]);
+                        objs.Add(reader["product_kind"]);
+                        objs.Add(reader["unit_name"]);
+                        objs.Add(reader["product_price"]);
 
                         dataGridView1.Rows.Add(objs.ToArray());
                     }
@@ -87,28 +90,7 @@ namespace PizzaStoreManagement.Forms
 
         private void Update(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.ItemWithDescription("Chỉnh Sửa Thông Tin", "Tên Chức Vụ", Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, (title, description) =>
-            {
-                    if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(role_name) FROM pizza_store.roles AS role WHERE role_name = @role_name AND role_id != role_id;", new List<Tuple<SqlDbType, object>>()
-            {
-                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, title),
-                new Tuple<SqlDbType, object>(SqlDbType.Char, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value),
-            }))
-                    {
-                        MessageBox.Show($"Cập nhật thất bại. {title} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
-                        return;
-                    }
-
-                {
-                    Utils.Database.ExecuteNonQuery("UPDATE pizza_store.roles SET role_name = @role_name, role_description = @role_description WHERE role_id = @role_id;",
-                         new List<Tuple<SqlDbType, object>>() {
-                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, title),
-                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar,description),
-                                     new Tuple<SqlDbType, object>(SqlDbType.Char,dataGridView1.Rows[currentMouseOverRow].Cells[0].Value),
-                         });
-                }
-                RefreshDataGridView();
-            });
+            var dialog = new Dialogs.ProductInfomation(Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, () => { RefreshDataGridView(); });
 
             Utils.ApplicationManager.ShowDialog(dialog);
         }
