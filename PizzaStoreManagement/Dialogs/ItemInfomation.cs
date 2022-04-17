@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Dialogs
 {
-    public partial class ItemForm : Form
+    public partial class ItemInfomation : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -14,7 +14,7 @@ namespace PizzaStoreManagement.Dialogs
         private Action _onBtnClosePressed;
         private Action<string> _onBtnConfirmPressed;
 
-        public ItemForm(string header, string title, Utils.ViewState create, Action onBtnClosePressed, Action<string> onBtnConfirmPressed)
+        public ItemInfomation(string header, string title, Utils.ViewState view, Action onBtnClosePressed, Action<string> onBtnConfirmPressed)
         {
             InitializeComponent();
             _onBtnClosePressed = onBtnClosePressed;

@@ -1,6 +1,6 @@
 ﻿namespace PizzaStoreManagement.Dialogs
 {
-    partial class ItemForm
+    partial class ItemInfomation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemInfomation));
             this.pnHeader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCloseDialog = new RJCodeAdvance.RJControls.RJButton();

@@ -87,7 +87,7 @@ namespace PizzaStoreManagement.Forms
 
         private void Update(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.ItemWithDescription("Chỉnh Sửa Tông Tin", "Tên Chức Vụ", Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, (title, description) =>
+            var dialog = new Dialogs.ItemWithDescription("Chỉnh Sửa Thông Tin", "Tên Chức Vụ", Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, (title, description) =>
             {
                 if (title != (string)dataGridView1.Rows[currentMouseOverRow].Cells[currentMouseOverColumn].Value)
                     if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(role_name) FROM pizza_store.roles AS role WHERE role_name = @role_name;", new List<Tuple<SqlDbType, object>>()

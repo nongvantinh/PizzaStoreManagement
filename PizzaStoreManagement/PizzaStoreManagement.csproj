@@ -58,11 +58,11 @@
     <Compile Include="Dialogs\EmployeeInfomation.Designer.cs">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ItemForm.cs">
+    <Compile Include="Dialogs\ItemInfomation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\ItemForm.Designer.cs">
-      <DependentUpon>ItemForm.cs</DependentUpon>
+    <Compile Include="Dialogs\ItemInfomation.Designer.cs">
+      <DependentUpon>ItemInfomation.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ItemWithDescription.cs">
       <SubType>Form</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="Dialogs\EmployeeInfomation.resx">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ItemForm.resx">
-      <DependentUpon>ItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\ItemInfomation.resx">
+      <DependentUpon>ItemInfomation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ItemWithDescription.resx">
       <DependentUpon>ItemWithDescription.cs</DependentUpon>
