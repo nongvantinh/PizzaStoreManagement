@@ -20,6 +20,12 @@ namespace PizzaStoreManagement.Forms
             StartPosition = FormStartPosition.CenterScreen;
 
             ActiveLoginForm();
+            TestScene();
+        }
+
+        private void TestScene()
+        {
+            OpenChildForm(new ManageStore());
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

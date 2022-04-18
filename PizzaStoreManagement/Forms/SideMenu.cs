@@ -73,5 +73,11 @@ namespace PizzaStoreManagement.Forms
             Home.Instance.OpenChildForm(new ManageProductUnit());
             HideSubMenu();
         }
+
+        private void btnProductKind_Click(object sender, EventArgs e)
+        {
+            Home.Instance.OpenChildForm(new ManageProductKind());
+            HideSubMenu();
+        }
     }
 }

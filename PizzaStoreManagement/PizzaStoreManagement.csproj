@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BuildingFloor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BuildingFloor.Designer.cs">
+      <DependentUpon>BuildingFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DinnerTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DinnerTable.Designer.cs">
+      <DependentUpon>DinnerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\EmployeeInfomation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +88,12 @@
     <Compile Include="Dialogs\ProductInfomation.Designer.cs">
       <DependentUpon>ProductInfomation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\StoreUnitInfomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StoreUnitInfomation.Designer.cs">
+      <DependentUpon>StoreUnitInfomation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +106,12 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageDinnerTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageDinnerTable.Designer.cs">
+      <DependentUpon>ManageDinnerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +123,12 @@
     </Compile>
     <Compile Include="Forms\ManageProduct.Designer.cs">
       <DependentUpon>ManageProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageProductKind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageProductKind.Designer.cs">
+      <DependentUpon>ManageProductKind.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageProductUnit.cs">
       <SubType>Form</SubType>
@@ -154,6 +184,12 @@
     <Compile Include="Utils\Database.cs" />
     <Compile Include="Utils\ThemeColor.cs" />
     <Compile Include="Utils\ViewState.cs" />
+    <EmbeddedResource Include="Controls\BuildingFloor.resx">
+      <DependentUpon>BuildingFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DinnerTable.resx">
+      <DependentUpon>DinnerTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\EmployeeInfomation.resx">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,17 +202,26 @@
     <EmbeddedResource Include="Dialogs\ProductInfomation.resx">
       <DependentUpon>ProductInfomation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StoreUnitInfomation.resx">
+      <DependentUpon>StoreUnitInfomation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageDinnerTable.resx">
+      <DependentUpon>ManageDinnerTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProduct.resx">
       <DependentUpon>ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageProductKind.resx">
+      <DependentUpon>ManageProductKind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProductUnit.resx">
       <DependentUpon>ManageProductUnit.cs</DependentUpon>
