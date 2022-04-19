@@ -43,7 +43,8 @@ namespace PizzaStoreManagement.Forms
         private void RefreshDataGridView()
         {
             dataGridView1.Rows.Clear();
-            Utils.Database.ExecuteReader("SELECT product_id, product_name, product_kind, " +
+            Utils.Database.ExecuteReader("SELECT product_id, product_name, " +
+                " (SELECT kind_name FROM pizza_store.product_kind WHERE kind_id = product_kind_id) as kind_name, " +
                 " (SELECT unit_name FROM pizza_store.unit WHERE unit_id = product_unit_id) as unit_name, product_price" +
                 " FROM pizza_store.products;", new List<Tuple<SqlDbType, object>>(),
                 reader =>
@@ -53,7 +54,7 @@ namespace PizzaStoreManagement.Forms
                         List<object> objs = new List<object>();
                         objs.Add(reader["product_id"]);
                         objs.Add(reader["product_name"]);
-                        objs.Add(reader["product_kind"]);
+                        objs.Add(reader["kind_name"]);
                         objs.Add(reader["unit_name"]);
                         objs.Add(reader["product_price"]);
 

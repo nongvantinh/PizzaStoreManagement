@@ -37,6 +37,7 @@
             this.btnClose = new RJCodeAdvance.RJControls.RJButton();
             this.lbHeader = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.btnBack = new RJCodeAdvance.RJControls.RJButton();
             this.pnHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.pnHeader.Controls.Add(this.btnBack);
             this.pnHeader.Controls.Add(this.panel1);
             this.pnHeader.Controls.Add(this.lbHeader);
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -156,6 +158,25 @@
             this.pnMain.Size = new System.Drawing.Size(995, 573);
             this.pnMain.TabIndex = 2;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBack.BorderRadius = 12;
+            this.btnBack.BorderSize = 0;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(33, 24);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 50);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.TextColor = System.Drawing.Color.White;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -186,6 +207,7 @@
         private RJCodeAdvance.RJControls.RJButton btnClose;
         private RJCodeAdvance.RJControls.RJButton btnMinimize;
         private RJCodeAdvance.RJControls.RJButton btnMaximize;
+        private RJCodeAdvance.RJControls.RJButton btnBack;
     }
 }
 

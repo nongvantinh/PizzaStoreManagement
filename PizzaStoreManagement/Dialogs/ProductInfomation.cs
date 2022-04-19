@@ -18,6 +18,7 @@ namespace PizzaStoreManagement.Dialogs
 
         private OpenFileDialog _fileDialog = new OpenFileDialog();
         private Dictionary<string, Guid> _units = new Dictionary<string, Guid>();
+        private Dictionary<string, Guid> _kinds = new Dictionary<string, Guid>();
         private Action _onBtnClosePressed;
         private Action _onBtnConfirmPressed;
         private string _productId;
@@ -30,7 +31,10 @@ namespace PizzaStoreManagement.Dialogs
             Utils.Database.ExecuteReader("SELECT unit_id, unit_name FROM pizza_store.unit;", new List<Tuple<SqlDbType, object>>(),
     reader => { while (reader.Read()) _units.Add((string)reader["unit_name"], new Guid((string)reader["unit_id"])); });
 
-            cbKind.Items.AddRange(new List<string>() { "Pizza", "Đồ uống" }.ToArray());
+            Utils.Database.ExecuteReader("SELECT kind_id, kind_name FROM pizza_store.product_kind;", new List<Tuple<SqlDbType, object>>(),
+reader => { while (reader.Read()) _kinds.Add((string)reader["kind_name"], new Guid((string)reader["kind_id"])); });
+
+            cbKind.Items.AddRange(_kinds.Keys.ToArray());
             cbUnit.Items.AddRange(_units.Keys.ToArray());
 
             _view = view;
@@ -43,7 +47,8 @@ namespace PizzaStoreManagement.Dialogs
                 case Utils.ViewState.Details:
                 case Utils.ViewState.Update:
                     {
-                        Utils.Database.ExecuteReader("SELECT product_avatar, product_name, product_kind," +
+                        Utils.Database.ExecuteReader("SELECT product_avatar, product_name, " +
+                            "  (SELECT kind_name FROM pizza_store.product_kind WHERE kind_id = product_kind_id) as kind_name," +
                             " (SELECT unit_name FROM pizza_store.unit WHERE unit_id = product_unit_id) AS unit_name, product_price" +
                             " FROM pizza_store.products WHERE product_id = @product_id;", new List<Tuple<SqlDbType, object>>()
                             {
@@ -54,7 +59,7 @@ namespace PizzaStoreManagement.Dialogs
                                 {
                                     pbAvatar.Image = Utils.ApplicationManager.ByteArrayToImage((byte[])reader["product_avatar"]);
                                     tbName.Texts = (string)reader["product_name"];
-                                    cbKind.SelectedItem = (string)reader["product_kind"];
+                                    cbKind.SelectedItem = (string)reader["kind_name"];
                                     cbUnit.SelectedItem = (string)reader["unit_name"];
                                     tbPrice.Texts = reader["product_price"].ToString();
                                 }
@@ -96,16 +101,16 @@ namespace PizzaStoreManagement.Dialogs
                 new Tuple<SqlDbType, object>(SqlDbType.Char, _productId)
              }))
                     {
-                        MessageBox.Show($"{tbName.Texts} đã tồn tại trong cơ sở dữ liệu, hãy chọn tài khoản khác.");
+                        MessageBox.Show($"{tbName.Texts} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
                     }
                     else
                     {
-                        Utils.Database.ExecuteNonQuery("UPDATE pizza_store.products SET product_avatar = @product_avatar, product_name = @product_name, product_kind = @product_kind, " +
+                        Utils.Database.ExecuteNonQuery("UPDATE pizza_store.products SET product_avatar = @product_avatar, product_name = @product_name, product_unit_id = @product_unit_id, " +
                             " product_unit_id = @product_unit_id, product_price = @product_price WHERE product_id = @product_id;", new List<Tuple<SqlDbType, object>>()
                             {
                                      new Tuple<SqlDbType, object>(SqlDbType.Image, Utils.ApplicationManager.ImageToByteArray(pbAvatar.Image)),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, tbName.Texts),
-                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, cbKind.SelectedItem),
+                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, _kinds[(string)cbKind.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Int, int.Parse(tbPrice.Texts)),
 
@@ -123,12 +128,12 @@ namespace PizzaStoreManagement.Dialogs
                     }
                     else
                     {
-                        Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.products(product_id, product_avatar, product_name, product_kind, " +
-                            "product_unit_id, product_price) VALUES(NEWID(), @product_avatar, @product_name, @product_kind, @product_unit_id, @product_price);",
+                        Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.products(product_id, product_avatar, product_name, product_kind_id, " +
+                            "product_unit_id, product_price) VALUES(NEWID(), @product_avatar, @product_name, @product_kind_id, @product_unit_id, @product_price);",
                              new List<Tuple<SqlDbType, object>>() {
                                                                       new Tuple<SqlDbType, object>(SqlDbType.Image, Utils.ApplicationManager.ImageToByteArray(pbAvatar.Image)),
                                      new Tuple<SqlDbType, object>(SqlDbType.NVarChar, tbName.Texts),
-                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, cbKind.SelectedItem),
+                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, _kinds[(string)cbKind.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Char, _units[(string)cbUnit.SelectedItem].ToString()),
                                      new Tuple<SqlDbType, object>(SqlDbType.Int, int.Parse(tbPrice.Texts)),
                              });

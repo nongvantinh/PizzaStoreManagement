@@ -9,6 +9,10 @@ namespace PizzaStoreManagement.Forms
         public static Home Instance { get; private set; }
         private Form activeForm;
 
+        public Action OnBtnBackClicked;
+        public bool BackButtonVisible { get => btnBack.Visible; set { btnBack.Visible = value; } }
+
+
         public Home()
         {
             Instance = this;
@@ -18,7 +22,7 @@ namespace PizzaStoreManagement.Forms
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             StartPosition = FormStartPosition.CenterScreen;
-
+            BackButtonVisible = false;
             ActiveLoginForm();
             TestScene();
         }
@@ -110,6 +114,11 @@ namespace PizzaStoreManagement.Forms
             childForm.BringToFront();
             childForm.Show();
             lbHeader.Text = childForm.Text;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            OnBtnBackClicked?.Invoke();
         }
     }
 }

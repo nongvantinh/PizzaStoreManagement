@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pnSideMenuContents = new System.Windows.Forms.Panel();
             this.pnSideMenuManage = new System.Windows.Forms.Panel();
+            this.btnProductKind = new System.Windows.Forms.Button();
             this.btnUnit = new System.Windows.Forms.Button();
             this.btnWarehouse = new System.Windows.Forms.Button();
             this.btnRole = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.btnStatistics = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.pnSIdeMenu = new System.Windows.Forms.Panel();
-            this.btnProductKind = new System.Windows.Forms.Button();
+            this.btnManageStore = new System.Windows.Forms.Button();
             this.pnSideMenuHeader.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
@@ -195,6 +196,7 @@
             // pnSideMenuManage
             // 
             this.pnSideMenuManage.AutoSize = true;
+            this.pnSideMenuManage.Controls.Add(this.btnManageStore);
             this.pnSideMenuManage.Controls.Add(this.btnProductKind);
             this.pnSideMenuManage.Controls.Add(this.btnUnit);
             this.pnSideMenuManage.Controls.Add(this.btnWarehouse);
@@ -205,8 +207,26 @@
             this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
             this.pnSideMenuManage.Name = "pnSideMenuManage";
-            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 399);
+            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 456);
             this.pnSideMenuManage.TabIndex = 3;
+            // 
+            // btnProductKind
+            // 
+            this.btnProductKind.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductKind.FlatAppearance.BorderSize = 0;
+            this.btnProductKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnProductKind.Image = ((System.Drawing.Image)(resources.GetObject("btnProductKind.Image")));
+            this.btnProductKind.Location = new System.Drawing.Point(0, 342);
+            this.btnProductKind.Name = "btnProductKind";
+            this.btnProductKind.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProductKind.Size = new System.Drawing.Size(228, 57);
+            this.btnProductKind.TabIndex = 11;
+            this.btnProductKind.Text = "     Loại Sản Phẩm";
+            this.btnProductKind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductKind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductKind.UseVisualStyleBackColor = true;
+            this.btnProductKind.Click += new System.EventHandler(this.btnProductKind_Click);
             // 
             // btnUnit
             // 
@@ -345,23 +365,23 @@
             this.pnSIdeMenu.Size = new System.Drawing.Size(249, 626);
             this.pnSIdeMenu.TabIndex = 1;
             // 
-            // btnProductKind
+            // btnManageStore
             // 
-            this.btnProductKind.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductKind.FlatAppearance.BorderSize = 0;
-            this.btnProductKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnProductKind.Image = ((System.Drawing.Image)(resources.GetObject("btnProductKind.Image")));
-            this.btnProductKind.Location = new System.Drawing.Point(0, 342);
-            this.btnProductKind.Name = "btnProductKind";
-            this.btnProductKind.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProductKind.Size = new System.Drawing.Size(228, 57);
-            this.btnProductKind.TabIndex = 11;
-            this.btnProductKind.Text = "     Loại Sản Phẩm";
-            this.btnProductKind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductKind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProductKind.UseVisualStyleBackColor = true;
-            this.btnProductKind.Click += new System.EventHandler(this.btnProductKind_Click);
+            this.btnManageStore.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageStore.FlatAppearance.BorderSize = 0;
+            this.btnManageStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnManageStore.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStore.Image")));
+            this.btnManageStore.Location = new System.Drawing.Point(0, 399);
+            this.btnManageStore.Name = "btnManageStore";
+            this.btnManageStore.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnManageStore.Size = new System.Drawing.Size(228, 57);
+            this.btnManageStore.TabIndex = 12;
+            this.btnManageStore.Text = "     Cửa hàng";
+            this.btnManageStore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageStore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageStore.UseVisualStyleBackColor = true;
+            this.btnManageStore.Click += new System.EventHandler(this.btnManageStore_Click);
             // 
             // SideMenu
             // 
@@ -413,5 +433,6 @@
         private System.Windows.Forms.Panel pnSIdeMenu;
         private System.Windows.Forms.Button btnUnit;
         private System.Windows.Forms.Button btnProductKind;
+        private System.Windows.Forms.Button btnManageStore;
     }
 }
