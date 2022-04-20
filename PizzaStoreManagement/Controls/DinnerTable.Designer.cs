@@ -62,7 +62,7 @@
             this.label.TabIndex = 12;
             this.label.Text = "1";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label.Click += new System.EventHandler(this.label_Click);
+            this.label.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label_MouseClick);
             // 
             // pbPerson2
             // 
@@ -153,7 +153,7 @@
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 3;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
+            this.pictureBox18.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox18_MouseClick);
             // 
             // DinnerTable
             // 

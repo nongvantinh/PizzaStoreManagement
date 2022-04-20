@@ -5,23 +5,24 @@ namespace PizzaStoreManagement.Controls
 {
     public partial class BuildingFloor : UserControl
     {
-        public int FloorIndex;
-        public event Action<int> OnClickOnFloor;
+        public string FloorId;
+        public string FloorDescription;
+        public event Action<MouseButtons, string, string> OnClickOnFloor;
 
         public BuildingFloor()
         {
             InitializeComponent();
         }
 
-        public BuildingFloor(int floorIndex):this()
+        public BuildingFloor(string floorId, string floorName):this()
         {
-            FloorIndex = floorIndex;
-            label.Text = "Tầng " + floorIndex.ToString();
+            FloorId = floorId;
+            label.Text = FloorDescription = floorName;
         }
 
-        private void pbFloor_Click(object sender, EventArgs e)
+        private void pbFloor_MouseClick(object sender, MouseEventArgs e)
         {
-            OnClickOnFloor?.Invoke(FloorIndex);
+            OnClickOnFloor?.Invoke(e.Button, FloorId, FloorDescription);
         }
     }
 }

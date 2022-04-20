@@ -1,22 +1,18 @@
 ﻿using PizzaStoreManagement.Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Forms
 {
     public partial class ManageDinnerTable : Form
     {
-        private Random _random = new Random();
         private List<Panel> _layers = new List<Panel>();
-        private int _numItem = 0;
-        private int _floorIndex;
+        private string _floorId;
+        private string _floorDescription;
+        private DinnerTable _focusedTable;
 
         public ManageDinnerTable()
         {
@@ -30,29 +26,49 @@ namespace PizzaStoreManagement.Forms
             };
         }
 
-        public ManageDinnerTable(int floorIndex)
+        private void RefreshView()
+        {
+            for (int i = _layers.Count - 1; i >= 0; --i)
+            {
+                Panel layer = _layers[i];
+                _layers.RemoveAt(i);
+                layer.Dispose();
+            }
+
+            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables ORDER BY table_description;", new List<Tuple<SqlDbType, object>>(),
+                reader =>
+                {
+                    for (int i = 0; reader.Read(); ++i)
+                    {
+                        InsertTable((string)reader["table_id"], (string)reader["table_description"], (string)reader["table_at_floor"]);
+                    }
+                });
+        }
+
+        public ManageDinnerTable(string floorId, string floorDescription)
             : this()
         {
-            _floorIndex = floorIndex;
+            _floorId = floorId;
+            _floorDescription = floorDescription;
             RefreshData();
         }
 
         private void RefreshData()
         {
-            Utils.Database.ExecuteReader("SELECT table_index FROM pizza_store.dinner_tables WHERE table_at_floor = @table_at_floor ORDER BY table_index;", new List<Tuple<SqlDbType, object>>()
+            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables WHERE table_at_floor = @table_at_floor ORDER BY table_description;", new List<Tuple<SqlDbType, object>>()
             {
-                new Tuple<SqlDbType, object>(SqlDbType.Int, _floorIndex)
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId)
             },
                 reader =>
                 {
                     for (int i = 0; reader.Read(); ++i)
                     {
-                        InsertTable((int)reader["table_index"]);
+                        InsertTable((string)reader["table_id"], (string)reader["table_description"], (string)reader["table_at_floor"]);
                     }
                 });
         }
 
-        private void InsertTable(int index)
+        private void InsertTable(string tableId, string tableDescription, string atFlorId)
         {
             if (0 == _layers.Count || 6 == _layers[_layers.Count - 1].Controls.Count - 1)
             {
@@ -73,48 +89,101 @@ namespace PizzaStoreManagement.Forms
                 pnGrid.Controls.SetChildIndex(_layers[_layers.Count - 1], 0);
             }
 
-            var table = new Controls.DinnerTable(index, _random.Next(0, DinnerTable.MaxPerson));
+            var table = new Controls.DinnerTable(tableId, tableDescription, atFlorId);
             table.Dock = DockStyle.Left;
-            table.OnClickOnTable += (tableIndex, numPerson) => { MessageBox.Show($"{tableIndex}, {numPerson}"); };
+            table.OnClickOnTable += (button, id, description, atFloorId, numPerson) =>
+            {
+                switch (button)
+                {
+                    case MouseButtons.Left:
+                        MessageBox.Show($"{description}, {numPerson}");
+                        break;
+                    case MouseButtons.Right:
+                        {
+                            _focusedTable = table;
+                            ContextMenuStrip m = new ContextMenuStrip();
+                            m.Items.Add("Cập Nhật").Click += Update;
+                            m.Items.Add("Xóa").Click += Delete;
+                            m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
+                        }
+                        break;
+                }
+            };
             _layers[_layers.Count - 1].Controls.Add(table);
             _layers[_layers.Count - 1].Controls.SetChildIndex(table, 0);
         }
 
-        private void btnAdd_Click(object sender, System.EventArgs e)
+        private void AddNew(object sender, EventArgs e)
         {
-            InsertTable(++_numItem);
-
-            Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.dinner_tables(table_index, table_description, table_at_floor)" +
-                "VALUES(@table_index, @table_description, @table_at_floor);", new List<Tuple<SqlDbType, object>>()
+            var dialog = new Dialogs.ItemInfomation("Thêm Bàn", "Tên Bàn", Utils.ViewState.Create, () => { }, (value) =>
+            {
+                if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(table_id) FROM pizza_store.dinner_tables AS name WHERE table_description = @table_description AND table_at_floor = @table_at_floor;", new List<Tuple<SqlDbType, object>>()
+             {
+                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, value),
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId),
+             }))
                 {
-                    new Tuple<SqlDbType, object>(SqlDbType.Int, _numItem),
-                    new Tuple<SqlDbType, object>(SqlDbType.NVarChar, string.Empty),
-                    new Tuple<SqlDbType, object>(SqlDbType.Int, _floorIndex),
-                });
+                    MessageBox.Show($"{value} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
+                }
+                else
+                {
+                    Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.dinner_tables(table_id, table_description, table_at_floor) VALUES(NEWID(), @table_description, @table_at_floor);", new List<Tuple<SqlDbType, object>>()
+                    {
+                        new Tuple<SqlDbType, object>(SqlDbType.NVarChar, value),
+                        new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId),
+                    });
+                    RefreshView();
+                }
+            });
+            Utils.ApplicationManager.ShowDialog(dialog);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void Update(object sender, EventArgs e)
         {
-            if (0 == _layers.Count)
-                return;
-
-            var removedFloor =(Controls.DinnerTable) _layers[_layers.Count - 1].Controls[0];
-            Utils.Database.ExecuteNonQuery("DELETE FROM pizza_store.dinner_tables WHERE table_index = @table_index AND table_at_floor = @floor_index; ",
-                new List<Tuple<System.Data.SqlDbType, object>>()
-                {
-                    new Tuple<System.Data.SqlDbType, object>(System.Data.SqlDbType.Int, removedFloor.TableIndex),
-                    new Tuple<System.Data.SqlDbType, object>(System.Data.SqlDbType.Int, _floorIndex)
-                });
-
-            _layers[_layers.Count - 1].Controls.Remove(removedFloor);
-            removedFloor.Dispose();
-
-            --_numItem;
-            if (0 == _layers[_layers.Count - 1].Controls.Count - 1)
+            var dialog = new Dialogs.ItemInfomation("Chỉnh Sửa Thông Tin", "Tên Bàn", Utils.ViewState.Update, () => { }, (value) =>
             {
-                var removedPanel = _layers[_layers.Count - 1];
-                _layers.Remove(removedPanel);
-                removedPanel.Dispose();
+                if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(table_description) FROM pizza_store.dinner_tables AS name WHERE table_description = @table_description AND table_at_floor = @table_at_floor;", new List<Tuple<SqlDbType, object>>()
+            {
+                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, value),
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId),
+            }))
+                {
+                    MessageBox.Show($"Cập nhật thất bại. {value} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
+                    return;
+                }
+
+                {
+                    Utils.Database.ExecuteNonQuery("UPDATE pizza_store.dinner_tables SET table_description = @table_description WHERE table_id = @table_id;",
+                         new List<Tuple<SqlDbType, object>>() {
+                                     new Tuple<SqlDbType, object>(SqlDbType.NVarChar, value),
+                                     new Tuple<SqlDbType, object>(SqlDbType.Char,_focusedTable.TableId),
+                         });
+                }
+                RefreshView();
+            });
+
+            Utils.ApplicationManager.ShowDialog(dialog);
+        }
+
+        private void Delete(object sender, EventArgs e)
+        {
+            Utils.Database.ExecuteNonQuery("DELETE FROM pizza_store.dinner_tables WHERE table_id = @table_id AND table_at_floor = @table_at_floor; ",
+    new List<Tuple<System.Data.SqlDbType, object>>()
+    {
+                    new Tuple<System.Data.SqlDbType, object>(System.Data.SqlDbType.Char, _focusedTable.TableId),
+                    new Tuple<System.Data.SqlDbType, object>(System.Data.SqlDbType.Char, _floorId)
+    });
+
+            RefreshView();
+        }
+
+        private void pnGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenuStrip m = new ContextMenuStrip();
+                m.Items.Add("Thêm Bàn").Click += AddNew;
+                m.Show(new Point(Cursor.Position.X, Cursor.Position.Y));
             }
         }
     }

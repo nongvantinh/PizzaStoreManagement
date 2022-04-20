@@ -58,7 +58,7 @@
             this.pbFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFloor.TabIndex = 4;
             this.pbFloor.TabStop = false;
-            this.pbFloor.Click += new System.EventHandler(this.pbFloor_Click);
+            this.pbFloor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbFloor_MouseClick);
             // 
             // BuildingFloor
             // 
@@ -68,7 +68,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.pbFloor);
             this.Font = new System.Drawing.Font("Times New Roman", 16F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BuildingFloor";
             ((System.ComponentModel.ISupportInitialize)(this.pbFloor)).EndInit();
             this.ResumeLayout(false);

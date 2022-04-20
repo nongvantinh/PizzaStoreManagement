@@ -12,7 +12,6 @@ namespace PizzaStoreManagement.Forms
         public Action OnBtnBackClicked;
         public bool BackButtonVisible { get => btnBack.Visible; set { btnBack.Visible = value; } }
 
-
         public Home()
         {
             Instance = this;
@@ -24,12 +23,6 @@ namespace PizzaStoreManagement.Forms
             StartPosition = FormStartPosition.CenterScreen;
             BackButtonVisible = false;
             ActiveLoginForm();
-            TestScene();
-        }
-
-        private void TestScene()
-        {
-            OpenChildForm(new ManageStore());
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

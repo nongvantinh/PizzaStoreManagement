@@ -6,12 +6,16 @@ namespace PizzaStoreManagement.Controls
 {
     public partial class DinnerTable : UserControl
     {
-        public int TableIndex;
+        public string AtFloorId;
+        public string TableId;
+        public string TableDescription;
+
         public const int MaxPerson = 8;
+
+        public event Action<MouseButtons,string, string, string, int> OnClickOnTable;
+
+
         private int _numPerson = 0;
-
-        public event Action<int, int> OnClickOnTable;
-
         public int NumPerson
         {
             get => _numPerson; set
@@ -32,13 +36,15 @@ namespace PizzaStoreManagement.Controls
             persons.ForEach(x => x.Hide());
             RotatePerson();
         }
-        public DinnerTable(int tableIndex): this()
+        public DinnerTable(string tableId, string tableDescription, string atFloorId) : this()
         {
-            TableIndex = tableIndex;
-            label.Text = TableIndex.ToString();
+            TableId = tableId;
+            label.Text = TableDescription = tableDescription;
+            AtFloorId = atFloorId;
+            NumPerson = 0;
         }
 
-        public DinnerTable(int tableIndex, int numPerson):this(tableIndex)
+        public DinnerTable(string tableId, string tableDescription, string atFloorId, int numPerson) : this(tableId, tableDescription, atFloorId)
         {
             NumPerson = numPerson;
         }
@@ -55,14 +61,14 @@ namespace PizzaStoreManagement.Controls
             pbPerson8.Image = Utils.ApplicationManager.RotateImage(pbPerson8.Image, angle += 45);
         }
 
-        private void pictureBox18_Click(object sender, EventArgs e)
+        private void label_MouseClick(object sender, MouseEventArgs e)
         {
-            OnClickOnTable?.Invoke(TableIndex, NumPerson);
+            OnClickOnTable?.Invoke(e.Button, TableId, TableDescription, AtFloorId, NumPerson);
         }
 
-        private void label_Click(object sender, EventArgs e)
+        private void pictureBox18_MouseClick(object sender, MouseEventArgs e)
         {
-            OnClickOnTable?.Invoke(TableIndex, NumPerson);
+            OnClickOnTable?.Invoke(e.Button,TableId, TableDescription, AtFloorId, NumPerson);
         }
     }
 }
