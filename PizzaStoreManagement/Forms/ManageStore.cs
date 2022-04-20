@@ -54,6 +54,8 @@ namespace PizzaStoreManagement.Forms
                 panel.Controls.Add(childPanel);
                 pnGrid.Controls.Add(panel);
 
+                panel.MouseClick += pnGrid_MouseClick;
+
                 _layers.Add(panel);
                 pnGrid.Controls.SetChildIndex(_layers[_layers.Count - 1], 0);
             }
