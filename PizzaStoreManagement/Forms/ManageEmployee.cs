@@ -58,7 +58,7 @@ namespace PizzaStoreManagement.Forms
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-                       if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
                 currentMouseOverColumn = dataGridView1.HitTest(e.X, e.Y).ColumnIndex;

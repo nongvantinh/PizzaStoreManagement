@@ -100,15 +100,15 @@ namespace PizzaStoreManagement.Forms
         {
             var dialog = new Dialogs.ItemInfomation("Chỉnh Sửa Thông Tin", "Tên Đơn Vị", Utils.ViewState.Update, () => { }, (value) =>
             {
-                    if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(unit_name) FROM pizza_store.unit AS name WHERE unit_name = @unit_name AND unit_id != @unit_id;", new List<Tuple<SqlDbType, object>>()
+                if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(unit_name) FROM pizza_store.unit AS name WHERE unit_name = @unit_name AND unit_id != @unit_id;", new List<Tuple<SqlDbType, object>>()
             {
                 new Tuple<SqlDbType, object>(SqlDbType.NVarChar, value),
                 new Tuple<SqlDbType, object>(SqlDbType.Char, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value),
             }))
-                    {
-                        MessageBox.Show($"Cập nhật thất bại. {value} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
-                        return;
-                    }
+                {
+                    MessageBox.Show($"Cập nhật thất bại. {value} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
+                    return;
+                }
 
                 {
                     Utils.Database.ExecuteNonQuery("UPDATE pizza_store.unit SET unit_name = @unit_name WHERE unit_id = @unit_id;",

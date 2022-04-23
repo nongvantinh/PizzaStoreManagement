@@ -14,7 +14,7 @@ namespace PizzaStoreManagement.Controls
             InitializeComponent();
         }
 
-        public BuildingFloor(string floorId, string floorName):this()
+        public BuildingFloor(string floorId, string floorName) : this()
         {
             FloorId = floorId;
             label.Text = FloorDescription = floorName;

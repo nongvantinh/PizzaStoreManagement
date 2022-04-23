@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Controls
@@ -37,7 +36,7 @@ namespace PizzaStoreManagement.Controls
         }
 
         public NinePatchRectElement(string id, byte[] avatar, string name, int price, string kind, string unit)
-            :this()
+            : this()
         {
             this._id = id;
             this._avatar = avatar;

@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PizzaStoreManagement.Dialogs
@@ -22,7 +17,7 @@ namespace PizzaStoreManagement.Dialogs
         private Action<string, string> _onBtnConfirmPressed;
         private string _itemId;
 
-        public ItemWithDescription(string header, string title, Utils.ViewState view,string itemId, Action onBtnClosePressed, Action<string, string> onBtnConfirmPressed)
+        public ItemWithDescription(string header, string title, Utils.ViewState view, string itemId, Action onBtnClosePressed, Action<string, string> onBtnConfirmPressed)
         {
             InitializeComponent();
             _onBtnClosePressed = onBtnClosePressed;
@@ -44,7 +39,7 @@ namespace PizzaStoreManagement.Dialogs
                             },
                             (reader) =>
                             {
-                                while(reader.Read())
+                                while (reader.Read())
                                 {
                                     tbTitle.Texts = (string)reader["role_name"];
                                     rtbDescription.Text = (string)reader["role_description"];

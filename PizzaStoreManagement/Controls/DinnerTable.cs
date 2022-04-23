@@ -12,7 +12,7 @@ namespace PizzaStoreManagement.Controls
 
         public const int MaxPerson = 8;
 
-        public event Action<MouseButtons,string, string, string, int> OnClickOnTable;
+        public event Action<MouseButtons, string, string, string, int> OnClickOnTable;
 
 
         private int _numPerson = 0;
@@ -68,7 +68,7 @@ namespace PizzaStoreManagement.Controls
 
         private void pictureBox18_MouseClick(object sender, MouseEventArgs e)
         {
-            OnClickOnTable?.Invoke(e.Button,TableId, TableDescription, AtFloorId, NumPerson);
+            OnClickOnTable?.Invoke(e.Button, TableId, TableDescription, AtFloorId, NumPerson);
         }
     }
 }
