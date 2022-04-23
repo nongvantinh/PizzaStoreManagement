@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreUnitInfomation));
             this.pnHeader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbHeader = new System.Windows.Forms.Label();
             this.btnCloseDialog = new RJCodeAdvance.RJControls.RJButton();
+            this.lbHeader = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new RJCodeAdvance.RJControls.RJButton();
             this.btnConfirm = new RJCodeAdvance.RJControls.RJButton();
@@ -65,21 +65,6 @@
             this.panel1.Size = new System.Drawing.Size(59, 56);
             this.panel1.TabIndex = 1;
             // 
-            // lbHeader
-            // 
-            this.lbHeader.AutoSize = true;
-            this.lbHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbHeader.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.lbHeader.Location = new System.Drawing.Point(0, 0);
-            this.lbHeader.MinimumSize = new System.Drawing.Size(511, 56);
-            this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(511, 56);
-            this.lbHeader.TabIndex = 0;
-            this.lbHeader.Text = "Thông Tin Cửa Hàng";
-            this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbHeader_MouseDown);
-            // 
             // btnCloseDialog
             // 
             this.btnCloseDialog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,6 +84,21 @@
             this.btnCloseDialog.TextColor = System.Drawing.Color.White;
             this.btnCloseDialog.UseVisualStyleBackColor = false;
             this.btnCloseDialog.Click += new System.EventHandler(this.btnCloseDialog_Click);
+            // 
+            // lbHeader
+            // 
+            this.lbHeader.AutoSize = true;
+            this.lbHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbHeader.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.lbHeader.Location = new System.Drawing.Point(0, 0);
+            this.lbHeader.MinimumSize = new System.Drawing.Size(511, 56);
+            this.lbHeader.Name = "lbHeader";
+            this.lbHeader.Size = new System.Drawing.Size(511, 56);
+            this.lbHeader.TabIndex = 0;
+            this.lbHeader.Text = "Thông Tin Cửa Hàng";
+            this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbHeader_MouseDown);
             // 
             // panel2
             // 

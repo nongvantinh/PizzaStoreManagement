@@ -64,6 +64,12 @@
     <Compile Include="Controls\DinnerTable.Designer.cs">
       <DependentUpon>DinnerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NinePatchRectElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NinePatchRectElement.Designer.cs">
+      <DependentUpon>NinePatchRectElement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\EmployeeInfomation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Dialogs\ItemWithDescription.Designer.cs">
       <DependentUpon>ItemWithDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OrderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OrderProduct.Designer.cs">
+      <DependentUpon>OrderProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ProductInfomation.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,12 @@
     </Compile>
     <Compile Include="Forms\ManageEmployee.Designer.cs">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageOrder.Designer.cs">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageProduct.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,12 @@
     <Compile Include="Forms\ManageWarehouse.Designer.cs">
       <DependentUpon>ManageWarehouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ProductMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProductMenu.Designer.cs">
+      <DependentUpon>ProductMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SideMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +214,9 @@
     <EmbeddedResource Include="Controls\DinnerTable.resx">
       <DependentUpon>DinnerTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NinePatchRectElement.resx">
+      <DependentUpon>NinePatchRectElement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\EmployeeInfomation.resx">
       <DependentUpon>EmployeeInfomation.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ItemWithDescription.resx">
       <DependentUpon>ItemWithDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OrderProduct.resx">
+      <DependentUpon>OrderProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ProductInfomation.resx">
       <DependentUpon>ProductInfomation.cs</DependentUpon>
@@ -216,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageOrder.resx">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProduct.resx">
       <DependentUpon>ManageProduct.cs</DependentUpon>
@@ -240,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageWarehouse.resx">
       <DependentUpon>ManageWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProductMenu.resx">
+      <DependentUpon>ProductMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SideMenu.resx">
       <DependentUpon>SideMenu.cs</DependentUpon>

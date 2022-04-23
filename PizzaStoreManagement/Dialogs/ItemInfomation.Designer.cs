@@ -182,7 +182,7 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // ItemForm
+            // ItemInfomation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.pnHeader);
             this.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ItemForm";
+            this.Name = "ItemInfomation";
             this.Text = "ItemForm";
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();

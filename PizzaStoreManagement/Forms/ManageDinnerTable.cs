@@ -97,6 +97,7 @@ namespace PizzaStoreManagement.Forms
                 {
                     case MouseButtons.Left:
                         MessageBox.Show($"{description}, {numPerson}");
+                        Home.Instance.OpenChildForm(new ManageOrder());
                         break;
                     case MouseButtons.Right:
                         {
