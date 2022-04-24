@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_kind = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.product_id,
             this.product_name,
             this.product_kind,
@@ -63,6 +65,15 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(977, 526);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ManagePromotion_MouseClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 6;
             // 
             // product_id
             // 
@@ -78,7 +89,7 @@
             this.product_name.MinimumWidth = 6;
             this.product_name.Name = "product_name";
             this.product_name.ReadOnly = true;
-            this.product_name.Width = 275;
+            this.product_name.Width = 250;
             // 
             // product_kind
             // 
@@ -86,6 +97,7 @@
             this.product_kind.MinimumWidth = 6;
             this.product_kind.Name = "product_kind";
             this.product_kind.ReadOnly = true;
+            this.product_kind.Width = 125;
             // 
             // product_unit
             // 
@@ -105,7 +117,7 @@
             // 
             // status
             // 
-            this.status.HeaderText = "Trạng Thái";
+            this.status.HeaderText = "Lượt sử dụng";
             this.status.MinimumWidth = 6;
             this.status.Name = "status";
             this.status.ReadOnly = true;
@@ -130,6 +142,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_kind;

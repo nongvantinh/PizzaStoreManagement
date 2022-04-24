@@ -51,6 +51,8 @@
             this.btnStatistics = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.pnSIdeMenu = new System.Windows.Forms.Panel();
+            this.btnPromotion = new System.Windows.Forms.Button();
+            this.btnVoucher = new System.Windows.Forms.Button();
             this.pnSideMenuHeader.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
@@ -196,6 +198,8 @@
             // pnSideMenuManage
             // 
             this.pnSideMenuManage.AutoSize = true;
+            this.pnSideMenuManage.Controls.Add(this.btnVoucher);
+            this.pnSideMenuManage.Controls.Add(this.btnPromotion);
             this.pnSideMenuManage.Controls.Add(this.btnManageStore);
             this.pnSideMenuManage.Controls.Add(this.btnProductKind);
             this.pnSideMenuManage.Controls.Add(this.btnUnit);
@@ -207,7 +211,7 @@
             this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
             this.pnSideMenuManage.Name = "pnSideMenuManage";
-            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 456);
+            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 570);
             this.pnSideMenuManage.TabIndex = 3;
             // 
             // btnManageStore
@@ -383,6 +387,42 @@
             this.pnSIdeMenu.Size = new System.Drawing.Size(249, 626);
             this.pnSIdeMenu.TabIndex = 1;
             // 
+            // btnPromotion
+            // 
+            this.btnPromotion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPromotion.FlatAppearance.BorderSize = 0;
+            this.btnPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPromotion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnPromotion.Image = ((System.Drawing.Image)(resources.GetObject("btnPromotion.Image")));
+            this.btnPromotion.Location = new System.Drawing.Point(0, 456);
+            this.btnPromotion.Name = "btnPromotion";
+            this.btnPromotion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPromotion.Size = new System.Drawing.Size(228, 57);
+            this.btnPromotion.TabIndex = 13;
+            this.btnPromotion.Text = "     Khuyễn mãi";
+            this.btnPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPromotion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPromotion.UseVisualStyleBackColor = true;
+            this.btnPromotion.Click += new System.EventHandler(this.btnPromotion_Click);
+            // 
+            // btnVoucher
+            // 
+            this.btnVoucher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVoucher.FlatAppearance.BorderSize = 0;
+            this.btnVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnVoucher.Image = ((System.Drawing.Image)(resources.GetObject("btnVoucher.Image")));
+            this.btnVoucher.Location = new System.Drawing.Point(0, 513);
+            this.btnVoucher.Name = "btnVoucher";
+            this.btnVoucher.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnVoucher.Size = new System.Drawing.Size(228, 57);
+            this.btnVoucher.TabIndex = 14;
+            this.btnVoucher.Text = "     Voucher";
+            this.btnVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVoucher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVoucher.UseVisualStyleBackColor = true;
+            this.btnVoucher.Click += new System.EventHandler(this.btnVoucher_Click);
+            // 
             // SideMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -434,5 +474,7 @@
         private System.Windows.Forms.Button btnUnit;
         private System.Windows.Forms.Button btnProductKind;
         private System.Windows.Forms.Button btnManageStore;
+        private System.Windows.Forms.Button btnVoucher;
+        private System.Windows.Forms.Button btnPromotion;
     }
 }
