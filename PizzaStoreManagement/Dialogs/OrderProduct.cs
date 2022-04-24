@@ -17,6 +17,7 @@ namespace PizzaStoreManagement.Dialogs
         private Action<string, string, int, int, string> _onBtnConfirmPressed;
         private string _productId;
         private int _quantity = 1;
+        private int _price = 0;
 
         public OrderProduct(string productId, int quantity, Action onBtnCloseClick, Action<string, string, int, int, string> onBtnConfirmClick)
         {
@@ -43,6 +44,7 @@ namespace PizzaStoreManagement.Dialogs
             tbUnit.Text = (string)reader["unit_name"];
             tbQuantity.Texts = _quantity.ToString();
             tbPrice.Text = reader["product_price"].ToString();
+            _price = (int)reader["product_price"];
         }
     });
         }
@@ -69,6 +71,12 @@ namespace PizzaStoreManagement.Dialogs
         {
             _onBtnConfirmPressed?.Invoke(_productId, tbName.Text, int.Parse(tbPrice.Text), int.Parse(tbQuantity.Texts), tbUnit.Text);
             Close();
+        }
+
+        private void tbQuantity__TextChanged(object sender, EventArgs e)
+        {
+            if (tbQuantity.Texts != String.Empty)
+                tbPrice.Text = (int.Parse(tbQuantity.Texts) * _price).ToString();
         }
     }
 }

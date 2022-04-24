@@ -21,6 +21,7 @@ namespace PizzaStoreManagement.Dialogs
 
         public ProductMenu(string orderId)
         {
+            _orderId = orderId;
             InitializeComponent();
             RefreshView();
         }
@@ -98,8 +99,31 @@ namespace PizzaStoreManagement.Dialogs
                 switch (button)
                 {
                     case MouseButtons.Left:
-                        MessageBox.Show($"{name}, {price}");
-                        Home.Instance.OpenChildForm(new ManageOrder());
+                        {
+                            if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM pizza_store.orders_details WHERE details_order_id = @details_order_id AND details_product_id = @details_product_id;",
+                                new List<Tuple<SqlDbType, object>>() {
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                            new Tuple<SqlDbType, object>(SqlDbType.Char, id)
+                                }))
+                            {
+                                Utils.Database.ExecuteNonQuery("UPDATE pizza_store.orders_details SET details_quantity = details_quantity + 1 WHERE details_order_id = @details_order_id AND details_product_id = @details_product_id;",
+                                    new List<Tuple<SqlDbType, object>>()
+                                    {
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                            new Tuple<SqlDbType, object>(SqlDbType.Char, id)
+                                    });
+                            }
+                            else
+                            {
+                                Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.orders_details(details_order_id, details_product_id, details_quantity) VALUES( @details_order_id, @details_product_id, @details_quantity);", new List<Tuple<SqlDbType, object>>()
+                    {
+                        new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                        new Tuple<SqlDbType, object>(SqlDbType.Char, id),
+                        new Tuple<SqlDbType, object>(SqlDbType.Int, 1),
+                    });
+                            }
+                            ManageOrder.Instance.RefreshDataGridView();
+                        }
                         break;
                     case MouseButtons.Right:
                         {
@@ -120,15 +144,30 @@ namespace PizzaStoreManagement.Dialogs
         {
             var dialog = new Dialogs.OrderProduct(_focusedProduct.Id, 1, () => { }, (id, name, price, quantity, unit) =>
             {
+                if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM pizza_store.orders_details WHERE details_order_id = @details_order_id AND details_product_id = @details_product_id;",
+    new List<Tuple<SqlDbType, object>>() {
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                            new Tuple<SqlDbType, object>(SqlDbType.Char, id)
+    }))
                 {
-                    Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.orders_details(details_order_id, details_product_id, details_quantity) VALUES(@details_order_id, @details_product_id, @details_quantity);", new List<Tuple<SqlDbType, object>>()
-                    {
-                        new Tuple<SqlDbType, object>(SqlDbType.NVarChar, _orderId),
-                        new Tuple<SqlDbType, object>(SqlDbType.Char, id),
-                        new Tuple<SqlDbType, object>(SqlDbType.Char, quantity),
-                    });
-                    RefreshView();
+                    Utils.Database.ExecuteNonQuery("UPDATE pizza_store.orders_details SET details_quantity = @details_quantity WHERE details_order_id = @details_order_id AND details_product_id = @details_product_id;",
+                        new List<Tuple<SqlDbType, object>>()
+                        {
+                        new Tuple<SqlDbType, object>(SqlDbType.Int, quantity),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                            new Tuple<SqlDbType, object>(SqlDbType.Char, id)
+                        });
                 }
+                else
+                {
+                    Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.orders_details(details_order_id, details_product_id, details_quantity) VALUES( @details_order_id, @details_product_id, @details_quantity);", new List<Tuple<SqlDbType, object>>()
+                    {
+                        new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+                        new Tuple<SqlDbType, object>(SqlDbType.Char, id),
+                        new Tuple<SqlDbType, object>(SqlDbType.Int, quantity),
+                    });
+                }
+                    ManageOrder.Instance.RefreshDataGridView();
             });
             Utils.ApplicationManager.ShowDialog(dialog);
         }

@@ -97,7 +97,26 @@ namespace PizzaStoreManagement.Forms
                 {
                     case MouseButtons.Left:
                         MessageBox.Show($"{description}, {numPerson}");
-                        Home.Instance.OpenChildForm(new ManageOrder());
+                        if (Home.Instance.Orders.ContainsKey(tableId))
+                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId]));
+                        else
+                        {
+                            string orderId = Guid.NewGuid().ToString();
+                            Home.Instance.Orders.Add(tableId, orderId);
+
+                            Utils.Database.ExecuteNonQuery("INSERT INTO pizza_store.orders(order_id, order_floor_id, order_table_id, order_employee_id, order_total, order_date_in, order_date_out) " +
+                                " VALUES(@order_id, @order_floor_id, @order_table_id, @order_employee_id, @order_total, @order_date_in, @order_date_out);", new List<Tuple<SqlDbType, object>>()
+                                {
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, orderId ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, atFlorId ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, tableId ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, "E341536E-60A7-4FD8-889D-B84DD4D3C1F3" ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Int, 0 ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),
+                                });
+                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId]));
+                        }
                         break;
                     case MouseButtons.Right:
                         {

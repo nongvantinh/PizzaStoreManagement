@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -11,6 +12,9 @@ namespace PizzaStoreManagement.Forms
 
         public Action OnBtnBackClicked;
         public bool BackButtonVisible { get => btnBack.Visible; set { btnBack.Visible = value; } }
+
+        // Holds key as the tableId, value is order_id of current table.
+        public Dictionary<string, string> Orders = new Dictionary<string, string>();
 
         public Home()
         {

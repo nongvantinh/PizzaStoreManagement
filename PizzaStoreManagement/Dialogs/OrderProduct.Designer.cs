@@ -215,6 +215,7 @@
             this.tbQuantity.TabIndex = 14;
             this.tbQuantity.Texts = "";
             this.tbQuantity.UnderlinedStyle = false;
+            this.tbQuantity._TextChanged += new System.EventHandler(this.tbQuantity__TextChanged);
             // 
             // pbAvatar
             // 
