@@ -35,7 +35,7 @@ namespace PizzaStoreManagement.Forms
                 layer.Dispose();
             }
 
-            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables ORDER BY table_description;", new List<Tuple<SqlDbType, object>>(),
+            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables WHERE table_at_floor = @table_at_floor ORDER BY table_description;", new List<Tuple<SqlDbType, object>>() { new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId)},
                 reader =>
                 {
                     for (int i = 0; reader.Read(); ++i)
