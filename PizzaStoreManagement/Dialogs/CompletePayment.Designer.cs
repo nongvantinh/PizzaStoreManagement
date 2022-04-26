@@ -251,6 +251,7 @@
             this.btnPay.Text = "Thu Tiền";
             this.btnPay.TextColor = System.Drawing.Color.White;
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // panel4
             // 

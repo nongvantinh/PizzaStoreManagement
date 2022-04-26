@@ -13,7 +13,9 @@ namespace PizzaStoreManagement.Dialogs
 {
     public partial class CompletePayment : Form
     {
-        private string _orderId;
+        private string _orderId = string.Empty;
+        private string _promotionId = string.Empty;
+        private string _voucherId = string.Empty;
         private int _total = 0;
         private int _tempSum = 0;
         private List<Utils.Product> _products = new List<Utils.Product>();
@@ -130,8 +132,9 @@ reader =>
             (DateTime)reader["promotion_start_date"],
             (DateTime)reader["promotion_end_date"],
             (1 == (int)reader["promotion_condition"]) ? true : false,
-            (isChecked, kind, name, percentDiscount, cashDiscount, maxDiscount, condition, incremental) =>
+            (isChecked, id, kind, name, percentDiscount, cashDiscount, maxDiscount, condition, incremental) =>
             {
+                _promotionId = id;
                 ApplyCode(name, condition, kind, percentDiscount, cashDiscount, maxDiscount, isChecked);
             }
             );
@@ -254,10 +257,21 @@ reader =>
         }
 
         rtbVoucherContent.Text = content;
+        _voucherId = id;
         ApplyCode(name, condition, kind, percentDiscount, cashDiscount, maxDiscount, true);
 
     }
 });
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            _orderId = string.Empty == _orderId ? Guid.NewGuid().ToString() : _orderId;
+            _promotionId = string.Empty == _promotionId ? Guid.NewGuid().ToString() : _promotionId;
+            _voucherId = string.Empty == _voucherId ? Guid.NewGuid().ToString(): _voucherId;
+            var dialog = new Controls.Report(_orderId, _promotionId, _voucherId);
+            dialog.ShowDialog();
+
         }
     }
 }

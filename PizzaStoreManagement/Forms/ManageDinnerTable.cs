@@ -96,7 +96,6 @@ namespace PizzaStoreManagement.Forms
                 switch (button)
                 {
                     case MouseButtons.Left:
-                        MessageBox.Show($"{description}, {numPerson}");
                         if (Home.Instance.Orders.ContainsKey(tableId))
                             Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId]));
                         else

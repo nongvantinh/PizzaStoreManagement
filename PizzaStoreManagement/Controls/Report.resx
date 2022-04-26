@@ -117,42 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCloseDialog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAQZJREFUWEft
-        llEKgzAQRO3Fehpv1bMWu09mYZRU1NggJQ8CZrM7M+YrQ6fT6RSYpukZ66HtYZhFQ9s6QmiM9Y71Qljl
-        3TCjWTRGlc8RAtwMQsmhUPRqJkHr/E3F8FoQdoWiR73OoR8qgoCEnE1hztTj1IdJEJKgUzSgpjPnujAJ
-        ghJ2FkZ8q+ZcHyZBWAbObKjVLkyCgYwc9u3DJBjJ8BvtwiQYynhN+zCAqczX3Op2knahMJKhw75U+20o
-        DGTkzMZa7UIhLANnYci3as71oRCUsFM0oqYz57pQCEnQ2TTgTD1OfSgEJOTsEqZHvU5dqBi+1wMNQuA+
-        T9gkhO7zyO90Ov/FMHwA3dN7SlJbEXgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="product_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="product_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="product_kind.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="product_unit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="product_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALtJREFUSEvt
-        kMENAiEQRblZwXqzA5uwsq3BYjxahTahFXjDN+RDWJEsGowXXvIzwMz8v1k3GPwf7/2MCtTuA35FiFp9
-        wG+LbsFZqLUOs7Z8RBs9LVD/ioy7alsAc/nyCS1CuOd9q3YPv0sjdTQclyMphFqYh0XgPOv4HgYmdEGG
-        1QOK/9hCdiiaWz+Zr8Lwq/mk9z2KIQ/V1G/ChrVkFMvc85C+5hHeLeRc61fRkvHZl7WC6XdfNhj8GOee
-        G1xqrFesTRwAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>
