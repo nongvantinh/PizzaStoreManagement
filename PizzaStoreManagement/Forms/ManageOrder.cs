@@ -136,7 +136,11 @@ namespace PizzaStoreManagement.Forms
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Home.Instance.Orders.Remove(_tableId);
+            var dialog = new Dialogs.CompletePayment(_orderId);
+            Utils.ApplicationManager.ShowDialog(dialog);
+
+// Wrong place.
+//Home.Instance.Orders.Remove(_tableId);
         }
     }
 }
