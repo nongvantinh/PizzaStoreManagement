@@ -103,10 +103,10 @@ namespace PizzaStoreManagement.Forms
         {
             var dialog = new Dialogs.ItemWithDescription("Chỉnh Sửa Tông Tin", "Tên Chức Vụ", Utils.ViewState.Update, (string)dataGridView1.Rows[currentMouseOverRow].Cells[0].Value, () => { }, (title, description) =>
             {
-                if (title != (string)dataGridView1.Rows[currentMouseOverRow].Cells[currentMouseOverColumn].Value)
-                    if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(role_name) FROM pizza_store.roles AS role WHERE role_name = @role_name;", new List<Tuple<SqlDbType, object>>()
+                    if (0 != Utils.Database.ExecuteScalar<int>("SELECT COUNT(role_name) FROM pizza_store.roles AS role WHERE role_name = @role_name AND role_id != @role_id;", new List<Tuple<SqlDbType, object>>()
             {
-                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, title)
+                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, title),
+                new Tuple<SqlDbType, object>(SqlDbType.NVarChar, dataGridView1.Rows[currentMouseOverRow].Cells[0].Value)
             }))
                     {
                         MessageBox.Show($"Cập nhật thất bại. {title} đã tồn tại trong cơ sở dữ liệu, hãy chọn tên khác.");
