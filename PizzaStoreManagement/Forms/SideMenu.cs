@@ -5,8 +5,11 @@ namespace PizzaStoreManagement.Forms
 {
     public partial class SideMenu : Form
     {
+        public static SideMenu Instance { get; set; }
         public SideMenu()
         {
+            Instance = this;
+
             InitializeComponent();
             HideSubMenu();
         }
@@ -80,7 +83,7 @@ namespace PizzaStoreManagement.Forms
             HideSubMenu();
         }
 
-        private void btnManageStore_Click(object sender, EventArgs e)
+        public void btnManageStore_Click(object sender, EventArgs e)
         {
             Home.Instance.OpenChildForm(new ManageStore());
             HideSubMenu();

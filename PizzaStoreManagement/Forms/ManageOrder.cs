@@ -15,13 +15,17 @@ namespace PizzaStoreManagement.Forms
         private string _orderId = string.Empty;
         private string _tableId = string.Empty;
         private int _total = 0;
+        private string _floor_id;
+        private string _floorDescription;
 
-        public ManageOrder(string tableId, string orderId)
+        public ManageOrder(string tableId, string orderId, string floorId, string floorDescription)
         {
             Instance = this;
 
             _tableId = tableId;
             _orderId = orderId;
+            _floor_id = floorId;
+            _floorDescription = floorDescription;
 
             InitializeComponent();
             InitGridView();
@@ -136,11 +140,8 @@ namespace PizzaStoreManagement.Forms
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            var dialog = new Dialogs.CompletePayment(_orderId);
+            var dialog = new Dialogs.CompletePayment(_orderId, _tableId, _floor_id, _floorDescription);
             Utils.ApplicationManager.ShowDialog(dialog);
-
-// Wrong place.
-//Home.Instance.Orders.Remove(_tableId);
         }
     }
 }

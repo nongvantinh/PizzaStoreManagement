@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaStoreManagement.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,14 @@ namespace PizzaStoreManagement.Dialogs
     public partial class CompletePayment : Form
     {
         private string _orderId = string.Empty;
+        private string _tableId;
         private string _promotionId = string.Empty;
         private string _voucherId = string.Empty;
         private int _total = 0;
         private int _tempSum = 0;
         private List<Utils.Product> _products = new List<Utils.Product>();
+        private string _floorId;
+        private string _floorDescription;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -40,10 +44,13 @@ namespace PizzaStoreManagement.Dialogs
             InitializeComponent();
         }
 
-        public CompletePayment(string orderId)
+        public CompletePayment(string orderId, string tableId, string floorId, string floorDescription)
             : this()
         {
             this._orderId = orderId;
+            this._tableId = tableId;
+            this._floorId = floorId;
+            this._floorDescription = floorDescription;
 
             InitGridView();
             RefreshDataGridView();
@@ -227,7 +234,7 @@ reader =>
 " LEFT JOIN pizza_store.product_kind ON pizza_store.product_kind.kind_id = voucher_product_id " +
 " WHERE voucher_code = @voucher_code;", new List<Tuple<SqlDbType, object>>() { new Tuple<SqlDbType, object>(SqlDbType.Char, tbVoucherCode.Texts) },
 reader =>
-{
+{ 
     while (reader.Read())
     {
         string id = (string)reader["voucher_id"];
@@ -259,18 +266,30 @@ reader =>
         rtbVoucherContent.Text = content;
         _voucherId = id;
         ApplyCode(name, condition, kind, percentDiscount, cashDiscount, maxDiscount, true);
-
     }
 });
         }
 
-        private void btnPay_Click(object sender, EventArgs e)
+        public void btnPay_Click(object sender, EventArgs e)
         {
-            _orderId = string.Empty == _orderId ? Guid.NewGuid().ToString() : _orderId;
-            _promotionId = string.Empty == _promotionId ? Guid.NewGuid().ToString() : _promotionId;
-            _voucherId = string.Empty == _voucherId ? Guid.NewGuid().ToString(): _voucherId;
-            var dialog = new Controls.Report(_orderId, _promotionId, _voucherId);
-            dialog.ShowDialog();
+            _orderId = string.Empty == _orderId ? "NULL" : _orderId;
+            _promotionId = string.Empty == _promotionId ? "NULL" : _promotionId;
+            _voucherId = string.Empty == _voucherId ? "NULL" : _voucherId;
+
+            Utils.Database.ExecuteNonQuery("UPDATE pizza_store.orders SET order_total = @order_total," +
+                " order_date_out = @order_date_out, order_promotion_id = @order_promotion_id, order_voucher_id = @order_voucher_id WHERE order_id = @order_id; ", new List<Tuple<SqlDbType, object>>()
+            {
+                new Tuple<SqlDbType, object>(SqlDbType.Int, _tempSum),
+                new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now),
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _promotionId),
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _voucherId),
+
+                new Tuple<SqlDbType, object>(SqlDbType.Char, _orderId),
+            });
+            Forms.Home.Instance.Orders.Remove(_tableId);
+            Forms.Home.Instance.OpenChildForm(new ManageDinnerTable(_floorId, _floorDescription));
+
+            Forms.Home.Instance.CompleteOrder(_orderId, _promotionId, _voucherId, Close);
 
         }
     }

@@ -97,7 +97,7 @@ namespace PizzaStoreManagement.Forms
                 {
                     case MouseButtons.Left:
                         if (Home.Instance.Orders.ContainsKey(tableId))
-                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId]));
+                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId], atFlorId, _floorDescription));
                         else
                         {
                             string orderId = Guid.NewGuid().ToString();
@@ -114,7 +114,7 @@ namespace PizzaStoreManagement.Forms
                                     new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),
                                     new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),
                                 });
-                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId]));
+                            Home.Instance.OpenChildForm(new ManageOrder(tableId, Home.Instance.Orders[tableId], _floorId, _floorDescription));
                         }
                         break;
                     case MouseButtons.Right:

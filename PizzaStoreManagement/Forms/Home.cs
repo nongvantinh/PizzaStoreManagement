@@ -117,5 +117,12 @@ namespace PizzaStoreManagement.Forms
         {
             OnBtnBackClicked?.Invoke();
         }
+
+        public void CompleteOrder(string orderId, string promotionId, string voucherId, Action close)
+        {
+            close?.Invoke();
+            var dialog = new Controls.Report(orderId, promotionId, voucherId);
+            dialog.ShowDialog();
+        }
     }
 }
