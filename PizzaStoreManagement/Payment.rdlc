@@ -95,7 +95,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!floor_description.Value, "DataSet1")</Value>
+                <Value>=Fields!floor_description.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -134,7 +134,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>0.29444in</Top>
-        <Left>4.6889in</Left>
+        <Left>3.67223in</Left>
         <Height>0.225in</Height>
         <Width>0.84167in</Width>
         <ZIndex>4</ZIndex>
@@ -155,7 +155,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!table_description.Value, "DataSet1")</Value>
+                <Value>=Fields!table_description.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -185,7 +185,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!order_date_in.Value, "DataSet1")</Value>
+                <Value>=Fields!order_date_in.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -245,7 +245,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!order_date_out.Value, "DataSet1")</Value>
+                <Value>=Fields!order_date_out.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -762,7 +762,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!account_full_name.Value, "DataSet1")</Value>
+                <Value>=Fields!account_full_name.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -951,7 +951,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!promotion.Value, "DataSet1")</Value>
+                  <Value>=Fields!promotion.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1041,7 +1041,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!voucher.Value, "DataSet1")</Value>
+                  <Value>=Fields!voucher.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1101,7 +1101,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Sum(Fields!order_total.Value, "DataSet1")</Value>
+                  <Value>=Fields!order_total.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
