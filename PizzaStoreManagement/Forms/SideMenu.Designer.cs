@@ -46,7 +46,6 @@
             this.btnManageStore = new System.Windows.Forms.Button();
             this.btnProductKind = new System.Windows.Forms.Button();
             this.btnUnit = new System.Windows.Forms.Button();
-            this.btnWarehouse = new System.Windows.Forms.Button();
             this.btnRole = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -203,7 +202,6 @@
             this.pnSideMenuManage.Controls.Add(this.btnManageStore);
             this.pnSideMenuManage.Controls.Add(this.btnProductKind);
             this.pnSideMenuManage.Controls.Add(this.btnUnit);
-            this.pnSideMenuManage.Controls.Add(this.btnWarehouse);
             this.pnSideMenuManage.Controls.Add(this.btnRole);
             this.pnSideMenuManage.Controls.Add(this.btnEmployee);
             this.pnSideMenuManage.Controls.Add(this.btnProduct);
@@ -211,7 +209,7 @@
             this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
             this.pnSideMenuManage.Name = "pnSideMenuManage";
-            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 570);
+            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 513);
             this.pnSideMenuManage.TabIndex = 3;
             // 
             // btnVoucher
@@ -221,7 +219,7 @@
             this.btnVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnVoucher.Image = ((System.Drawing.Image)(resources.GetObject("btnVoucher.Image")));
-            this.btnVoucher.Location = new System.Drawing.Point(0, 513);
+            this.btnVoucher.Location = new System.Drawing.Point(0, 456);
             this.btnVoucher.Name = "btnVoucher";
             this.btnVoucher.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnVoucher.Size = new System.Drawing.Size(228, 57);
@@ -239,7 +237,7 @@
             this.btnPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPromotion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnPromotion.Image = ((System.Drawing.Image)(resources.GetObject("btnPromotion.Image")));
-            this.btnPromotion.Location = new System.Drawing.Point(0, 456);
+            this.btnPromotion.Location = new System.Drawing.Point(0, 399);
             this.btnPromotion.Name = "btnPromotion";
             this.btnPromotion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnPromotion.Size = new System.Drawing.Size(228, 57);
@@ -257,7 +255,7 @@
             this.btnManageStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnManageStore.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStore.Image")));
-            this.btnManageStore.Location = new System.Drawing.Point(0, 399);
+            this.btnManageStore.Location = new System.Drawing.Point(0, 342);
             this.btnManageStore.Name = "btnManageStore";
             this.btnManageStore.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnManageStore.Size = new System.Drawing.Size(228, 57);
@@ -275,7 +273,7 @@
             this.btnProductKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnProductKind.Image = ((System.Drawing.Image)(resources.GetObject("btnProductKind.Image")));
-            this.btnProductKind.Location = new System.Drawing.Point(0, 342);
+            this.btnProductKind.Location = new System.Drawing.Point(0, 285);
             this.btnProductKind.Name = "btnProductKind";
             this.btnProductKind.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnProductKind.Size = new System.Drawing.Size(228, 57);
@@ -293,7 +291,7 @@
             this.btnUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnUnit.Image = ((System.Drawing.Image)(resources.GetObject("btnUnit.Image")));
-            this.btnUnit.Location = new System.Drawing.Point(0, 285);
+            this.btnUnit.Location = new System.Drawing.Point(0, 228);
             this.btnUnit.Name = "btnUnit";
             this.btnUnit.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnUnit.Size = new System.Drawing.Size(228, 57);
@@ -303,24 +301,6 @@
             this.btnUnit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUnit.UseVisualStyleBackColor = true;
             this.btnUnit.Click += new System.EventHandler(this.btnUnit_Click);
-            // 
-            // btnWarehouse
-            // 
-            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWarehouse.FlatAppearance.BorderSize = 0;
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.Image")));
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 228);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnWarehouse.Size = new System.Drawing.Size(228, 57);
-            this.btnWarehouse.TabIndex = 9;
-            this.btnWarehouse.Text = "     Kho Hàng";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnWarehouse.UseVisualStyleBackColor = true;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // btnRole
             // 
@@ -464,7 +444,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnSideMenuContents;
         private System.Windows.Forms.Panel pnSideMenuManage;
-        private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.Button btnRole;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnProduct;

@@ -6,6 +6,10 @@ namespace PizzaStoreManagement.Forms
     public partial class SideMenu : Form
     {
         public static SideMenu Instance { get; set; }
+        public string AccountId = string.Empty;
+        public string AccountFullName = string.Empty;
+        public string AccountRole = string.Empty;
+
         public SideMenu()
         {
             Instance = this;
@@ -13,6 +17,8 @@ namespace PizzaStoreManagement.Forms
             InitializeComponent();
             HideSubMenu();
         }
+
+
 
         private void HideSubMenu()
         {
@@ -39,6 +45,7 @@ namespace PizzaStoreManagement.Forms
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
+            Home.Instance.OpenChildForm(new Statistics());
             HideSubMenu();
         }
 
@@ -57,6 +64,16 @@ namespace PizzaStoreManagement.Forms
         private void btnStore_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+        }
+
+        internal void Update(string v1, string v2, string v3)
+        {
+            AccountId = v1;
+            AccountFullName = v2;
+            AccountRole = v3;
+
+            label4.Text = v2;
+            label5.Text = v3;
         }
 
         private void btnRole_Click(object sender, EventArgs e)
