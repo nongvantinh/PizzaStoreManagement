@@ -35,7 +35,7 @@ namespace PizzaStoreManagement.Forms
                 layer.Dispose();
             }
 
-            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables WHERE table_at_floor = @table_at_floor ORDER BY table_description;", new List<Tuple<SqlDbType, object>>() { new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId)},
+            Utils.Database.ExecuteReader("SELECT table_id, table_description, table_at_floor FROM pizza_store.dinner_tables WHERE table_at_floor = @table_at_floor ORDER BY table_description;", new List<Tuple<SqlDbType, object>>() { new Tuple<SqlDbType, object>(SqlDbType.Char, _floorId) },
                 reader =>
                 {
                     for (int i = 0; reader.Read(); ++i)
@@ -109,7 +109,7 @@ namespace PizzaStoreManagement.Forms
                                     new Tuple<SqlDbType, object>(SqlDbType.Char, orderId ),
                                     new Tuple<SqlDbType, object>(SqlDbType.Char, atFlorId ),
                                     new Tuple<SqlDbType, object>(SqlDbType.Char, tableId ),
-                                    new Tuple<SqlDbType, object>(SqlDbType.Char, "E341536E-60A7-4FD8-889D-B84DD4D3C1F3" ),
+                                    new Tuple<SqlDbType, object>(SqlDbType.Char, SideMenu.Instance.AccountId ),
                                     new Tuple<SqlDbType, object>(SqlDbType.Int, 0 ),
                                     new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),
                                     new Tuple<SqlDbType, object>(SqlDbType.DateTime, DateTime.Now ),

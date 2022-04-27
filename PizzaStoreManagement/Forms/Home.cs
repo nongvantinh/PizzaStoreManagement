@@ -7,6 +7,7 @@ namespace PizzaStoreManagement.Forms
 {
     public partial class Home : Form
     {
+
         public static Home Instance { get; private set; }
         private Form activeForm;
 

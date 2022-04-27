@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SideMenu));
             this.pnSideMenuHeader = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.cpbAvatar = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.btnManageStore = new System.Windows.Forms.Button();
             this.btnProductKind = new System.Windows.Forms.Button();
             this.btnUnit = new System.Windows.Forms.Button();
-            this.btnWarehouse = new System.Windows.Forms.Button();
             this.btnRole = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -55,7 +54,7 @@
             this.pnSIdeMenu = new System.Windows.Forms.Panel();
             this.pnSideMenuHeader.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbAvatar)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,29 +76,29 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.rjCircularPictureBox1);
+            this.panel4.Controls.Add(this.cpbAvatar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(249, 273);
             this.panel4.TabIndex = 8;
             // 
-            // rjCircularPictureBox1
+            // cpbAvatar
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(249, 249);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.rjCircularPictureBox1.TabIndex = 8;
-            this.rjCircularPictureBox1.TabStop = false;
+            this.cpbAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.cpbAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.cpbAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.cpbAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.cpbAvatar.BorderSize = 2;
+            this.cpbAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cpbAvatar.GradientAngle = 50F;
+            this.cpbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("cpbAvatar.Image")));
+            this.cpbAvatar.Location = new System.Drawing.Point(0, 0);
+            this.cpbAvatar.Name = "cpbAvatar";
+            this.cpbAvatar.Size = new System.Drawing.Size(249, 249);
+            this.cpbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cpbAvatar.TabIndex = 8;
+            this.cpbAvatar.TabStop = false;
             // 
             // panel1
             // 
@@ -203,7 +202,6 @@
             this.pnSideMenuManage.Controls.Add(this.btnManageStore);
             this.pnSideMenuManage.Controls.Add(this.btnProductKind);
             this.pnSideMenuManage.Controls.Add(this.btnUnit);
-            this.pnSideMenuManage.Controls.Add(this.btnWarehouse);
             this.pnSideMenuManage.Controls.Add(this.btnRole);
             this.pnSideMenuManage.Controls.Add(this.btnEmployee);
             this.pnSideMenuManage.Controls.Add(this.btnProduct);
@@ -211,7 +209,7 @@
             this.pnSideMenuManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSideMenuManage.Location = new System.Drawing.Point(0, 57);
             this.pnSideMenuManage.Name = "pnSideMenuManage";
-            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 570);
+            this.pnSideMenuManage.Size = new System.Drawing.Size(228, 513);
             this.pnSideMenuManage.TabIndex = 3;
             // 
             // btnVoucher
@@ -221,7 +219,7 @@
             this.btnVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnVoucher.Image = ((System.Drawing.Image)(resources.GetObject("btnVoucher.Image")));
-            this.btnVoucher.Location = new System.Drawing.Point(0, 513);
+            this.btnVoucher.Location = new System.Drawing.Point(0, 456);
             this.btnVoucher.Name = "btnVoucher";
             this.btnVoucher.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnVoucher.Size = new System.Drawing.Size(228, 57);
@@ -239,7 +237,7 @@
             this.btnPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPromotion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnPromotion.Image = ((System.Drawing.Image)(resources.GetObject("btnPromotion.Image")));
-            this.btnPromotion.Location = new System.Drawing.Point(0, 456);
+            this.btnPromotion.Location = new System.Drawing.Point(0, 399);
             this.btnPromotion.Name = "btnPromotion";
             this.btnPromotion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnPromotion.Size = new System.Drawing.Size(228, 57);
@@ -257,7 +255,7 @@
             this.btnManageStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnManageStore.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStore.Image")));
-            this.btnManageStore.Location = new System.Drawing.Point(0, 399);
+            this.btnManageStore.Location = new System.Drawing.Point(0, 342);
             this.btnManageStore.Name = "btnManageStore";
             this.btnManageStore.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnManageStore.Size = new System.Drawing.Size(228, 57);
@@ -275,7 +273,7 @@
             this.btnProductKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnProductKind.Image = ((System.Drawing.Image)(resources.GetObject("btnProductKind.Image")));
-            this.btnProductKind.Location = new System.Drawing.Point(0, 342);
+            this.btnProductKind.Location = new System.Drawing.Point(0, 285);
             this.btnProductKind.Name = "btnProductKind";
             this.btnProductKind.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnProductKind.Size = new System.Drawing.Size(228, 57);
@@ -293,7 +291,7 @@
             this.btnUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.btnUnit.Image = ((System.Drawing.Image)(resources.GetObject("btnUnit.Image")));
-            this.btnUnit.Location = new System.Drawing.Point(0, 285);
+            this.btnUnit.Location = new System.Drawing.Point(0, 228);
             this.btnUnit.Name = "btnUnit";
             this.btnUnit.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnUnit.Size = new System.Drawing.Size(228, 57);
@@ -303,24 +301,6 @@
             this.btnUnit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUnit.UseVisualStyleBackColor = true;
             this.btnUnit.Click += new System.EventHandler(this.btnUnit_Click);
-            // 
-            // btnWarehouse
-            // 
-            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWarehouse.FlatAppearance.BorderSize = 0;
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.btnWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.Image")));
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 228);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnWarehouse.Size = new System.Drawing.Size(228, 57);
-            this.btnWarehouse.TabIndex = 9;
-            this.btnWarehouse.Text = "     Kho Hàng";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnWarehouse.UseVisualStyleBackColor = true;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // btnRole
             // 
@@ -436,7 +416,7 @@
             this.Text = "SideMenu";
             this.pnSideMenuHeader.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbAvatar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -454,7 +434,7 @@
 
         private System.Windows.Forms.Panel pnSideMenuHeader;
         private System.Windows.Forms.Panel panel4;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox cpbAvatar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
@@ -464,7 +444,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnSideMenuContents;
         private System.Windows.Forms.Panel pnSideMenuManage;
-        private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.Button btnRole;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnProduct;
