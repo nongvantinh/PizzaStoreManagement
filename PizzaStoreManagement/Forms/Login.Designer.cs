@@ -42,10 +42,10 @@
             this.pnSideMenuManage = new System.Windows.Forms.Panel();
             this.pnSideMenuHeader = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnSIdeMenu.SuspendLayout();
             this.pnSideMenuContents.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -53,9 +53,9 @@
             this.panel3.SuspendLayout();
             this.pnSideMenuHeader.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnSIdeMenu
@@ -135,7 +135,7 @@
             this.tbPassword.Multiline = false;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbPassword.PasswordChar = false;
+            this.tbPassword.PasswordChar = true;
             this.tbPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPassword.PlaceholderText = "";
             this.tbPassword.Size = new System.Drawing.Size(249, 40);
@@ -233,6 +233,17 @@
             this.panel4.Size = new System.Drawing.Size(249, 273);
             this.panel4.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(249, 273);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
@@ -265,17 +276,6 @@
             this.label5.Text = "LOGIN";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(249, 273);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -296,10 +296,10 @@
             this.panel3.PerformLayout();
             this.pnSideMenuHeader.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
