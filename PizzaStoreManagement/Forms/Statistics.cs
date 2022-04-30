@@ -42,7 +42,7 @@ namespace PizzaStoreManagement.Forms
             Utils.Database.ExecuteReader("SELECT order_id, floor_description, table_description, order_total, account_full_name" +
                 " FROM pizza_store.orders " +
                 " LEFT JOIN pizza_store.floors ON pizza_store.floors.floor_id = order_floor_id " +
-                " LEFT JOIN pizza_store.dinner_tables ON pizza_store.dinner_tables.table_description = order_table_id " +
+                " LEFT JOIN pizza_store.dinner_tables ON pizza_store.dinner_tables.table_id = order_table_id " +
                 " LEFT JOIN pizza_store.accounts ON pizza_store.accounts.account_id = order_employee_id;", new List<Tuple<SqlDbType, object>>(),
                 reader =>
                 {
